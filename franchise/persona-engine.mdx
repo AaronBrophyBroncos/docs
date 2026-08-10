@@ -1,0 +1,123 @@
+---
+title: "Player Persona Engine: 65-Trait DNA System"
+sidebarTitle: "Persona Engine"
+description: "Every player in GridIron GM is driven by a unique trait DNA — learn how the 65-trait pool shapes decisions, contracts, and team chemistry."
+---
+
+Every player in your franchise carries a living psychological profile built from a primary archetype and a constellation of sub-traits drawn from a pool of 65 distinct characteristics. These traits are not cosmetic labels — they actively govern how a player responds to contract offers, reacts to trade rumors, performs under pressure, and influences the locker room around him. Understanding the persona engine is the difference between a front office that reacts to drama and one that anticipates it before it starts.
+
+## The Decision Value Formula
+
+When a player evaluates any major franchise decision — signing an extension, accepting a trade, or tolerating a reduced role — the game calculates a **Decision Value** score under the hood. The higher the score relative to competing offers or situations, the more likely the player is to act favorably toward your franchise.
+
+```
+Decision Value = w1(AAV) + w2(Guaranteed%) + w3(MarketSize) + w4(SnapShare) + w5(ChampionshipContenderIndex)
+```
+
+Each variable represents a weighted input:
+
+| Variable | What It Measures | Example |
+|---|---|---|
+| `AAV` | Average Annual Value of the contract offer | $22M/yr scores higher than $18M/yr |
+| `Guaranteed%` | Percentage of the deal that is fully guaranteed | 60% guaranteed outweighs 30% on equal AAV |
+| `MarketSize` | Franchise market tier (1–5 scale, 5 = largest) | New York scores 5; Green Bay scores 2 |
+| `SnapShare` | Projected snaps as a percentage of team total | A WR2 role at 55% share vs. a WR1 at 80% |
+| `ChampionshipContenderIndex` | Team's computed playoff and Super Bowl probability | Ranges 0.0–1.0; above 0.70 = contender |
+
+### Dynamic Weight Shifting
+
+The weights `w1` through `w5` are not static. They recalibrate every week based on in-game outcomes — wins, losses, injuries, and off-field events. A player who entered Week 1 prioritizing championships may have shifted his formula by Week 10 based on your team's trajectory.
+
+<Note>
+  Monitor each player's active trait weights in the **Franchise Hub → Player Profile → Persona Tab**. The radar chart there updates weekly and highlights any weights that have shifted by more than 15% since the previous check, flagging potential attitude changes before they escalate into holdouts or trade demands.
+</Note>
+
+## Archetypes and Primary Motivations
+
+Every player is assigned one **primary archetype** at the time of draft class generation or free agent pool creation. The archetype sets the default distribution of `w1`–`w5` weights and determines which sub-traits are most likely to appear in that player's profile.
+
+| Archetype | Primary Driver | Key Weight Bias | Locker Room Role |
+|---|---|---|---|
+| **Ring Chaser** | Championships above all else | `w5` (Championship Index) highest | Vocal leader, rallies team in losses |
+| **Bag Chaser** | Maximum contract value | `w1` (AAV) + `w2` (Guaranteed%) dominant | Neutral; disengages if underpaid |
+| **Hometown Hero** | Playing in home market | `w3` (MarketSize) skewed to home city | Community ambassador, fan favorite |
+| **Media Magnet** | Exposure and brand growth | `w3` (MarketSize) + social trait cluster | Press-room presence, polarizing internally |
+| **Film Room Rat** | Role clarity and scheme fit | `w4` (SnapShare) + scheme-fit trait cluster | Quiet leader, mentors younger players |
+| **Legacy Builder** | Career statistical milestones | Balanced across `w1`, `w4`, `w5` | Focused; dislikes disorganized depth charts |
+| **Alpha Dog** | Clear WR1 / starter designation | `w4` (SnapShare) dominant | Friction with crowded position rooms |
+| **Journeyman** | Stability and job security | `w2` (Guaranteed%) dominant | Low morale footprint, easy to manage |
+
+Sub-traits from the 65-trait pool layer onto the archetype. For example, a Ring Chaser with the **Injury Aware** sub-trait will still prioritize championships but will place abnormally high value on guaranteed money as a secondary concern — because he has seen teammates' careers cut short.
+
+## Dynamic Trait Shifting
+
+Archetypes are not permanent. Extended poor performance, roster upheaval, or a sustained losing environment can cause a player's primary archetype to shift, bringing a new weight distribution with it.
+
+### Example: Ring Chaser → Bag Chaser
+
+Consider a veteran wide receiver who enters your franchise as a **Ring Chaser** — he took a team-friendly deal in the offseason because your Championship Contender Index read 0.78. By Week 8 your team sits at 2–6, win percentage at .250 and trending down. The game evaluates the threshold condition:
+
+```
+IF archetype == "Ring Chaser"
+AND team_win_pct < 0.350
+AND current_week >= 8
+THEN trigger_archetype_drift_check()
+```
+
+The drift check runs a weighted probability calculation factoring in the player's **Loyalty** sub-trait score and his remaining contract years. A player with low Loyalty and one year left converts immediately to **Bag Chaser**. A player with high Loyalty and three years remaining may resist the shift entirely — or convert more slowly, passing through an intermediate **Frustrated Ring Chaser** state that surfaces as increased holdout risk rather than an instant archetype flip.
+
+Once the conversion completes, `w1` and `w2` become the dominant weights. He will no longer accept below-market extensions citing team vision. His negotiation Patience Meter will start shorter in future talks, and he may begin generating **Locker Room Rumor** events if his AAV sits below the position's market average.
+
+<Tabs>
+  <Tab title="Before Shift (Ring Chaser)">
+    ```
+    w1 (AAV)                  = 0.10
+    w2 (Guaranteed%)          = 0.10
+    w3 (MarketSize)           = 0.15
+    w4 (SnapShare)            = 0.25
+    w5 (ChampionshipIndex)    = 0.40
+    ```
+    This player accepted $3M below market because your team was a Super Bowl contender.
+  </Tab>
+  <Tab title="After Shift (Bag Chaser)">
+    ```
+    w1 (AAV)                  = 0.40
+    w2 (Guaranteed%)          = 0.35
+    w3 (MarketSize)           = 0.10
+    w4 (SnapShare)            = 0.10
+    w5 (ChampionshipIndex)    = 0.05
+    ```
+    He now wants a market-rate extension immediately. The championship pitch no longer moves the needle.
+  </Tab>
+</Tabs>
+
+## Sub-Traits Reference
+
+Sub-traits modify how the base archetype behaves at the edges. Every player carries between three and seven active sub-traits at any given time. Some sub-traits are permanent; others can be gained or lost through in-season events.
+
+<CardGroup cols={2}>
+  <Card title="Motivational Sub-Traits" icon="fire">
+    Traits like **Clutch**, **Media Hungry**, and **Contract Year Beast** amplify performance or negotiation leverage at specific moments. A player with Contract Year Beast gains a temporary `w1` boost in the final year of his deal.
+  </Card>
+  <Card title="Loyalty & Stability Sub-Traits" icon="shield">
+    Traits like **Franchise Pillar**, **Deep Roots**, and **Low Maintenance** slow archetype drift and reduce holdout probability. These players are anchors — invest in them for long-term stability.
+  </Card>
+  <Card title="Chemistry Sub-Traits" icon="users">
+    **Locker Room Leader**, **Mentor**, and **Spark Plug** affect team-wide morale and younger players' development trajectories. Releasing a Locker Room Leader without a replacement can cause a cascade of morale decay.
+  </Card>
+  <Card title="Volatile Sub-Traits" icon="bolt">
+    Traits like **Drama Magnet**, **Social Media Loose Cannon**, and **Agent Driven** increase the probability of escalation events. These players carry high upside but require active front-office management to keep stable.
+  </Card>
+</CardGroup>
+
+## Viewing and Tracking Traits
+
+Open any player's full profile from the roster screen and navigate to the **Persona** tab. You will find:
+
+- **Archetype Badge** with a drift probability indicator showing how stable the current archetype is
+- **Weight Radar Chart** displaying current `w1`–`w5` distribution
+- **Active Sub-Traits** list with tooltips explaining each trait's mechanical effect
+- **Trait History Log** showing any shifts that have occurred during your franchise save
+- **Mood Indicator** — a high-level read on the player's current satisfaction level across contract, role, and team performance dimensions
+
+Use the **Franchise Hub → Persona Dashboard** to see a team-wide heat map of archetypes and identify clusters of volatile traits before they compound into a locker room crisis.

@@ -1,0 +1,135 @@
+---
+title: "Contract Negotiation: Interest & Patience Meters"
+sidebarTitle: "Negotiations"
+description: "Master the interactive dialogue engine — manage Interest and Patience meters, structure offers, and close deals before the negotiation window slams shut."
+---
+
+Signing players in GridIron GM is not a menu — it is a conversation. The interactive dialogue engine puts you across the table from every player's agent, where two live meters track exactly how the negotiation is going and whether it is still going at all. Your offer structure, your timing, and the actions you take between proposals all determine whether you walk away with a signed deal or a 48-hour freeze that hands the advantage to every other team in the league.
+
+## The Negotiation Window
+
+When you initiate contract talks, the full-screen negotiation dialogue window opens with four active areas:
+
+<CardGroup cols={2}>
+  <Card title="Interest Meter" icon="heart">
+    Measures how much the player wants to be on your team right now. Influenced by scheme fit, your team's Championship Contender Index, market size, the player's projected snap share, and any Pitch Team Vision actions you have taken. Starts at a baseline determined by the player's archetype.
+  </Card>
+  <Card title="Patience Meter" icon="hourglass">
+    Measures how willing the player is to continue negotiating. Begins full and depletes when you lowball, stall, or repeat identical offers. When it reaches zero, negotiations freeze for 48 in-game hours and the player's agent stops returning calls.
+  </Card>
+  <Card title="Offer Builder" icon="file-contract">
+    The four-component panel where you construct each formal proposal before presenting it. All four components interact — inflating one can offset weakness in another depending on the player's active archetype weights.
+  </Card>
+  <Card title="Dynamic Actions" icon="bolt">
+    Three situational tools available between offers. Each action consumes a cooldown charge and can swing both meters — use them strategically rather than reactively.
+  </Card>
+</CardGroup>
+
+## Offer Structure Components
+
+Build every contract proposal from these four levers. The player's persona weights determine which components carry the most Decision Value in any given negotiation.
+
+<Accordion title="Salary (AAV)">
+  The average annual value of the contract. This is the headline number the player and the league will see. For **Bag Chaser** and **Legacy Builder** archetypes, AAV is the single highest-weighted input. Coming in below 85% of market value on opening offer to a Bag Chaser is considered a lowball and will trigger an immediate Patience drain.
+</Accordion>
+
+<Accordion title="Guaranteed Money">
+  The dollar amount fully protected regardless of release or injury. High-guarantee offers significantly boost Interest for players with the **Injury Aware** or **Security Seeker** sub-traits. Increasing guaranteed percentage mid-negotiation is one of the fastest ways to recover Patience without raising the total contract value.
+</Accordion>
+
+<Accordion title="Incentives">
+  Performance-based escalators tied to statistical milestones, Pro Bowl selections, or playoff appearance triggers. Incentives allow you to offer a lower base AAV while keeping total potential value competitive. Players with the **Contract Year Beast** or **Film Room Rat** traits respond positively to achievable incentive structures — they see them as recognition of their work, not a discount.
+</Accordion>
+
+<Accordion title="Void Years">
+  Dead-year clauses that allow you to convert future salary into signing bonus money for immediate cap relief, with the player voiding those years after a set date. Useful for managing cap space in championship windows. Be cautious — players with the **Franchise Pillar** sub-trait may interpret heavy void-year structures as a sign of bad faith, slightly draining Patience.
+</Accordion>
+
+## Meter States and What Moves Them
+
+<Tabs>
+  <Tab title="Interest Meter">
+    | State | Range | What It Means |
+    |---|---|---|
+    | **High Interest** | 75–100% | Player actively wants to be here. Accepts moderate discount on AAV. |
+    | **Neutral** | 40–74% | Player is evaluating fairly. Market-rate offer is required to close. |
+    | **Cool** | 15–39% | Player is skeptical. Requires above-market AAV or a Pitch Team Vision action. |
+    | **Disengaged** | 0–14% | Player is only here out of obligation. Deal is unlikely without a major concession. |
+
+    **What raises Interest:** Successful Pitch Team Vision actions, recent team wins, high Championship Contender Index, scheme fit match, strong SnapShare offer.
+
+    **What lowers Interest:** Team losing streak, poor Championship Contender Index, mismatched scheme, offering a role below the player's archetype expectations (e.g., offering a WR1 a slot receiver role).
+  </Tab>
+  <Tab title="Patience Meter">
+    | State | Range | What It Means |
+    |---|---|---|
+    | **Full** | 75–100% | Player is engaged and willing to negotiate through multiple rounds. |
+    | **Draining** | 40–74% | Player is growing frustrated. Avoid repeating offers or low AAV. |
+    | **Critical** | 10–39% | One more bad offer may trigger the freeze. Pivot or concede immediately. |
+    | **Frozen** | 0% | Negotiations locked for 48 in-game hours. No contact permitted. |
+
+    **What raises Patience:** Increasing guaranteed money between offers, using the Pivot Structure action, small but consistent upward offer movement.
+
+    **What lowers Patience:** Submitting the same offer twice, lowballing below archetype threshold, taking too many real-time minutes between offers (the agent reads delays as disrespect in some archetype profiles).
+  </Tab>
+</Tabs>
+
+<Warning>
+  Submitting an offer that the game flags as a **lowball** — defined as AAV more than 20% below the player's calculated market value for his archetype — causes an **instant full drain of the Patience Meter**. Negotiations lock immediately for 48 in-game hours regardless of how full the meter was before the offer. During the freeze, competing AI teams can contact the player freely. Always check the market value indicator in the Offer Builder before submitting.
+</Warning>
+
+## Dynamic Actions
+
+Between offer submissions you have access to three Dynamic Actions. Each action has a limited number of uses per negotiation session, so deploy them with intent.
+
+<CardGroup cols={3}>
+  <Card title="Pivot Structure" icon="arrows-rotate">
+    Shift the emphasis of your offer from one component to another without changing the total contract value. Use this when Patience is draining due to a stubborn AAV position — moving value from base salary into guaranteed money can reset the conversation without raising your cap hit. Available **3 times** per negotiation.
+  </Card>
+  <Card title="Walk Away" icon="door-open">
+    Voluntarily end the current session without a deal. The player's Interest Meter takes a small hit, but his Patience Meter resets fully when you reopen talks. Use Walk Away when Patience is Critical and you are not ready to make a better offer yet — it is better to reset than to trigger a freeze. Available **2 times** per negotiation.
+  </Card>
+  <Card title="Pitch Team Vision" icon="bullhorn">
+    Deliver a scripted monologue about your franchise's direction — playoff timeline, offensive scheme, usage plan for this player specifically. Raises Interest by 15–30 points depending on how well the pitch matches the player's archetype priorities. A Championship Contender Index pitch lands hard with Ring Chasers; a usage and scheme pitch lands harder with Film Room Rats. Available **2 times** per negotiation.
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Pitch Team Vision** is most effective when used early, while Interest is still in the Neutral range. Using it after Interest has fallen to Cool or Disengaged still helps, but the baseline boost is reduced by roughly half. Treat it as a tool for capitalizing on existing goodwill rather than rescuing a failing negotiation.
+</Tip>
+
+## Step-by-Step Example: Signing a Ring Chaser Extension
+
+The following walkthrough shows a full negotiation with a Ring Chaser wide receiver entering the final year of his deal. Your Championship Contender Index sits at 0.74.
+
+<Steps>
+  <Step title="Open Talks — Check the Baseline">
+    Navigate to the player's contract page and select **Initiate Extension Talks**. The dialogue window opens. Note that Interest starts at **68%** (Neutral-High) because your team is a contender and he is a Ring Chaser. Patience is at **100%**. The market value indicator suggests his AAV range is $21M–$24M.
+  </Step>
+  <Step title="Use Pitch Team Vision Early">
+    Before submitting an offer, use **Pitch Team Vision** and select the **Championship Window** pitch. Because his primary weight is `w5` (Championship Contender Index), Interest jumps from 68% to **91%** (High Interest). You have bought yourself significant negotiating room on AAV.
+  </Step>
+  <Step title="Submit an Opening Offer Below Market">
+    Offer 3 years / $19.5M AAV / 45% guaranteed. This is below market rate, but because Interest is High and he is a Ring Chaser with low `w1` weighting, the game does not flag it as a lowball. Patience drops slightly to **82%**. He counters asking for $22M AAV at 55% guaranteed.
+  </Step>
+  <Step title="Pivot Structure to Move Guaranteed">
+    Instead of raising AAV, use **Pivot Structure** to shift $2M of base salary per year into signing bonus, effectively raising guaranteed percentage to **54%** without raising AAV above $19.5M. Patience recovers to **90%**. Interest holds at 89%.
+  </Step>
+  <Step title="Submit the Revised Offer">
+    Resubmit at 3 years / $19.5M AAV / 54% guaranteed with a $2M incentive package tied to Pro Bowl and playoff appearances. The Decision Value calculation resolves favorably. The player accepts. Deal signed.
+  </Step>
+</Steps>
+
+## Tips for Common Negotiation Scenarios
+
+<Accordion title="Negotiating with a Bag Chaser">
+  Skip the championship pitch — it barely moves his Interest meter. Instead, front-load your offer with the highest AAV you can afford and pair it with strong guaranteed percentage. Use Pivot Structure to protect cap flexibility while still showing him the money up front. Walk Away is risky with Bag Chasers because the Interest hit on re-engagement can compound quickly.
+</Accordion>
+
+<Accordion title="Recovering from a Frozen Negotiation">
+  When the 48-hour freeze lifts, the player's Patience resets to 50% — not 100%. You have less runway than a fresh negotiation. Open immediately with a better offer than your last one, and use Pivot Structure on your first submission to signal good faith before you even wait for a counter. Do not use Walk Away during a post-freeze session.
+</Accordion>
+
+<Accordion title="Signing a Player with Volatile Sub-Traits">
+  Players tagged with **Drama Magnet** or **Agent Driven** sub-traits have Patience Meters that drain 25% faster than standard. Budget an extra Dynamic Action charge for these negotiations and treat every offer round as one step closer to the edge. Prioritize closing in three rounds or fewer.
+</Accordion>

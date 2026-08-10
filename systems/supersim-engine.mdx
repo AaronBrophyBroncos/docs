@@ -1,0 +1,120 @@
+---
+title: "SuperSim Engine: Realistic Positional Matchups"
+sidebarTitle: "SuperSim Engine"
+description: "Understand how the SuperSim Engine calculates game outcomes using individual positional matchup ratings instead of flat team overall scores."
+---
+
+The SuperSim Engine throws out the old approach of averaging team overall scores and calling it a result. Instead, every simulated game resolves through dozens of individual positional matchup calculations — your left tackle against their right edge rusher, your slot corner against their third receiver, your long snapper against their fastest gunner. The output is a statistically coherent game that actually reflects your roster construction, rewarding smart depth decisions and punishing lineup gaps that a flat-OVR system would never expose.
+
+## Why the Old Sim Engine Fell Short
+
+Legacy simulation engines boiled franchise outcomes down to a single number comparison: your team's overall rating versus the opponent's. A 92 OVR team beat an 88 OVR team at a predictable rate regardless of whether that 92 was powered by a single superstar QB inflating the average. The result was a simulation that punished roster imbalance inconsistently and produced statistical outputs — passing yards, sack totals, turnover rates — that rarely reflected real NFL distributions.
+
+SuperSim replaces that approach entirely. No flat overall comparison touches the final result. Every drive, every possession, every key third down emerges from a stack of individual matchup resolutions.
+
+---
+
+## How Positional Matchups Work
+
+Each simulated play pulls the relevant individual ratings from both sides of the ball and runs a weighted probability calculation. The gap between opposing ratings determines the win probability — a large gap in one player's favor makes a clean outcome more likely, but never guaranteed. Variance is built in.
+
+<CardGroup cols={2}>
+  <Card title="Offensive Line vs. Pass Rush" icon="shield-halved">
+    Your left tackle's **Edge Pass Block** rating is compared directly against the opposing right edge rusher's **Finesse Moves** and **Power Moves** ratings. Interior line matchups resolve the same way across your center and guards. A dominant edge rusher who faces a backup tackle sees those ratings reflected in sack totals and hurry rates.
+  </Card>
+  <Card title="Wide Receiver vs. Cornerback" icon="person-running">
+    Route Running, Release, and Catching ratings on the WR side face off against Press Coverage, Man Coverage, and Zone Coverage ratings on the CB side. The specific coverage call adjusts which CB ratings are weighted most heavily on each play.
+  </Card>
+  <Card title="Running Back vs. Defensive Front" icon="bolt">
+    Break Tackle, Acceleration, and Ball Carrier Vision ratings resolve against the front seven's Tackle, Pursuit, and Block Shedding. Alley fit angles — determined by awareness ratings — affect whether a run gains 3 yards or 12.
+  </Card>
+  <Card title="Safety vs. Tight End" icon="lock">
+    In two-TE sets or against pass-catching tight ends, your safeties' Man Coverage and Hit Power ratings are pulled into the matchup calculation. A safety with elite run-stop ratings but weak coverage grades will be exploited in the seam in simulation.
+  </Card>
+</CardGroup>
+
+### Offensive Line Cohesion
+
+The offensive line isn't just evaluated player-by-player. SuperSim applies a **cohesion modifier** based on how long your starting five has played together and whether your depth chart has clean backups at every spot.
+
+<Accordion title="Cohesion Modifier Details">
+  The cohesion modifier ranges from -8 to +5 and is applied across all OL matchup calculations for that game:
+
+  | Condition | Cohesion Modifier |
+  |---|---|
+  | Same starting five for 8+ consecutive games | +5 |
+  | One new starter (backup stepped in) | -3 |
+  | Two or more lineup changes from base unit | -6 |
+  | Starter playing through an injury (degraded rating) | -4 |
+  | Backup at a position with no listed depth | -8 |
+
+  That last row is the most punishing. If you leave a depth chart position empty — no backup listed at a spot — SuperSim fills the gap with a procedurally generated league-minimum player. Their ratings in pass protection and run blocking are significantly below starter average, and opposing coordinators' AI will identify and target that gap within the sim.
+</Accordion>
+
+---
+
+## Roster Depth and Depth Chart Gaps
+
+SuperSim actively monitors your depth chart before calculating injury and fatigue scenarios mid-sim. A single injury to a starter exposes your depth at that position immediately.
+
+<Steps>
+  <Step title="Audit Your Depth Chart Before Simming">
+    Open the Depth Chart screen and look for any position showing a red "No Backup" indicator. These are immediate vulnerabilities. Even a 70 OVR backup is dramatically better than a procedural fill-in.
+  </Step>
+  <Step title="Check Fatigue Ratings for Long Stretches">
+    If you're simming a multi-week stretch, players with low stamina ratings fatigue and play at reduced effectiveness in the second half of games and in back-to-back scheduling. Roster depth at skill positions isn't just injury insurance — it's performance insurance.
+  </Step>
+  <Step title="Target Opponent Matchup Weaknesses">
+    Use the pre-sim Matchup Analysis screen to preview where your roster advantages are largest. If your edge rusher has a significant rating edge over the opponent's right tackle, simming that game gives your pass rush favorable odds — but only if you have starter-quality depth behind your edge to maintain pressure deep into the game.
+  </Step>
+</Steps>
+
+<Tip>
+  Switch to the play-by-play breakdown view when simming a game featuring a key roster matchup you're uncertain about. The breakdown annotates each scoring drive and turnover with the specific positional matchup that triggered it — making it easy to spot which depth chart hole is being exploited so you can address it before the next game.
+</Tip>
+
+---
+
+## Simulation Speed Options
+
+SuperSim gives you full control over how much detail you want to watch and how quickly you want to move through the schedule.
+
+<Tabs>
+  <Tab title="Full Sim">
+    The engine resolves the entire game in the background and presents you with the final score, box score, and a game summary highlighting key matchup outcomes. Fastest option — ideal for getting through bye weeks and out-of-conference games where roster decisions don't hinge on the outcome.
+
+    **Time to complete:** 10–20 seconds per game
+  </Tab>
+  <Tab title="Accelerated (5-Min Quarters)">
+    Watch the game play out at condensed pace with 5-minute quarter clocks. Scoring plays, turnovers, and key third-down conversions are shown at normal speed while routine plays advance quickly. A good middle ground for division games you want to track without full commitment.
+
+    **Time to complete:** 8–12 minutes per game
+  </Tab>
+  <Tab title="Play-by-Play Breakdown">
+    Every play resolves one at a time with a text-and-stat breakdown showing which matchup ratings were pulled, the probability outcome, and the result. No animation — pure data. Use this mode when you're diagnosing roster problems, evaluating a new acquisition's real sim impact, or identifying which specific matchup is swinging a game you expected to win.
+
+    **Time to complete:** 15–25 minutes per game (user-paced)
+  </Tab>
+</Tabs>
+
+---
+
+## Statistical Realism
+
+Because SuperSim resolves at the individual matchup level, the statistical output aligns much more closely with real NFL distribution curves than legacy engines produced.
+
+<CardGroup cols={3}>
+  <Card title="Passing Stats" icon="chart-bar">
+    Completion percentages, yards-per-attempt, and sack rates fall within documented NFL ranges. Elite QBs facing weak secondaries put up realistic big days; average QBs facing shutdown corners produce realistic muted lines.
+  </Card>
+  <Card title="Rushing Stats" icon="person-walking">
+    Yards-per-carry variance is driven by OL cohesion and front-seven ratings rather than back overall. A great OL with an average back still runs well. A great back behind a broken line still struggles.
+  </Card>
+  <Card title="Defensive Stats" icon="shield">
+    Sack totals, interception rates, and forced fumbles scale to actual edge rusher, cornerback, and safety matchup quality — not to defensive overall. Dominant pass rushers on bad teams still get their sack totals.
+  </Card>
+</CardGroup>
+
+<Note>
+  SuperSim's overpowered playbook neutralization strips scheme-level exploits from the calculation. No playbook in the database carries a flat simulation bonus. The ratings of the players running the scheme are what matter — a spread offense with poor-blocking guards doesn't magically protect the QB because it's a spread.
+</Note>

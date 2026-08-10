@@ -1,47 +1,136 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get Started with GridIron GM"
+sidebarTitle: "Quickstart"
+description: "Create your franchise, evaluate your roster, set your scheme, and play your first game — everything you need to hit the ground running in GridIron GM."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+GridIron GM rewards preparation, but you don't need to master every system on day one. This guide walks you through the five essential steps to get from the main menu to a live NFL game in under 30 minutes. You'll set up your franchise, get comfortable with the roster interface, lock in your depth chart, kick off your first game, and handle the free-agency decision that lands in your inbox almost immediately. Everything else — persona management, advanced contract negotiation, the holdout system — can wait until you've had a few snaps under your belt.
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
 
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+  <Step title="Create Your Franchise and Pick a Team">
+    From the main menu, select **Franchise Mode** and then **Start New Franchise**. You'll choose between three entry points:
 
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
+    - **GM Mode** — Full front-office control: contracts, trades, draft, and finances. Recommended for experienced simulation players.
+    - **Coach + GM Mode** — You call plays on the field and run the front office. The complete experience.
+    - **Owner Mode** — Adds stadium management, ticket pricing, and revenue decisions on top of GM duties.
 
-    ```bash
-    your-cli start
-    ```
+    Next, pick your team. Each franchise card shows the team's current **Overall Rating**, **Salary Cap Space**, **Draft Capital** (total picks and their projected value), and a **Rebuild Difficulty** rating of Easy, Medium, or Hard. Scroll to the **Depth Chart Preview** tab on any team card to see positional strengths and gaps before you commit.
+
+    <Tip>
+      If you want to learn the systems without the pressure of a struggling roster, choose a team with a **Rebuild Difficulty** of Easy. If you're chasing a challenge, pick a Hard rebuild — just expect holdout requests and cap headaches in your first offseason.
+    </Tip>
+
+    Once you've selected your team, name your GM persona, pick a coaching staff archetype (Offensive-Minded, Defensive-Minded, or Balanced), and confirm. Your first season begins in Week 1 of the preseason.
   </Step>
+
+  <Step title="Review the Roster Overview Screen">
+    After your franchise loads, you land on the **Roster Hub** — the central dashboard for every personnel decision. Spend a few minutes here before touching anything else.
+
+    The Roster Hub breaks your 90-man preseason roster into five panels:
+
+    | Panel | What to Check |
+    |---|---|
+    | **Depth Chart** | Positional starters vs. backups; red indicators flag thin depth |
+    | **Contract Status** | Expiring deals, dead cap entries, and extension candidates |
+    | **Persona Snapshot** | Top-five trait flags for each player (e.g., Ring Chaser, Locker Room Leader) |
+    | **Injury Report** | Preseason injury history and durability ratings |
+    | **Cap Summary** | Current space, projected space after cuts, and the 53-man deadline countdown |
+
+    Pay special attention to the **Persona Snapshot** column. A player flagged as **Bag Chaser** on a rookie deal will demand an extension soon. A **Ring Chaser** veteran on a one-year deal may restructure favorably if your championship odds look strong.
+
+    <Note>
+      You must trim from 90 players to 53 before Week 1 of the regular season. GridIron GM will surface a **Cut Recommendations** list based on your scheme, but you make the final calls. Players you cut during the preseason window can be signed to your practice squad (15 spots) or claimed by rival teams.
+    </Note>
+  </Step>
+
+  <Step title="Set Your Depth Chart and Scheme">
+    Navigate to **Team Management → Scheme & Depth Chart**. Your first task is confirming your **Base Offensive and Defensive Schemes**, because scheme fit directly affects player ratings — a power back in a spread option offense loses Efficiency Rating points.
+
+    Choose from the scheme menus:
+
+    **Offense:** West Coast, Air Raid, Pro Style, Spread Option, Run-Heavy Power  
+    **Defense:** 4-3 Base, 3-4 Base, Nickel Heavy, Cover-2 Shell, Hybrid Press
+
+    After locking your scheme, work through each positional depth chart from top to bottom. Drag players into their correct slots or use the **Auto-Sort by OVR** button for a fast starting point. Then make manual adjustments where scheme fit diverges from overall rating.
+
+    <Tip>
+      Check the **Scheme Fit Score** badge next to each player's name. A 92 OVR halfback with a Poor scheme fit can underperform a 85 OVR back with an Elite fit. Fit scores update automatically when you change schemes.
+    </Tip>
+
+    Finally, open **Special Teams** and assign your returners, long snapper, and kick/punt coverage units. Special teams are simulated with real player attributes in GridIron GM — leaving them on Auto can cost you field position in close games.
+  </Step>
+
+  <Step title="Play or Simulate Your First Game">
+    Head to **Season Hub → Schedule** and select your Week 1 preseason game. You have three options:
+
+    - **Play Full Game** — Take full on-field control. Use the right-stick tackle system (flick up for high tackles, down for low wraps, left/right for angle correction), time your catching windows, and call plays from your full playbook.
+    - **Play Key Moments** — Skip to pivotal third downs, red-zone series, and two-minute drills. GridIron GM simulates everything else using **SuperSim**.
+    - **Full Sim** — Hand the entire game to **SuperSim**, which resolves every play through individual positional matchups rather than flat team overalls. Your defensive end's pass-rush move rating is tested against their tackle's anchor score, play by play.
+
+    For your first game, **Play Key Moments** is the recommended entry point — you get real gameplay reps without committing to a full four-quarter session.
+
+    **Difficulty Settings:** Before kickoff, access **Game Settings** to adjust difficulty. Rookie and Pro difficulties add aim-assist to the tackle system and extend catching windows. All-Pro and All-Madden tighten both and activate full Smart Zone AI penalty tracking, where calling the same play concept three times in a drive triggers automatic coverage adjustments from the CPU.
+
+    <Warning>
+      The **Smart Zone AI** repetition penalty is active on All-Pro and All-Madden difficulties. If you call the same route concept (e.g., Curl-Flat) more than twice consecutively, opposing DBs will begin pre-snapping into the zone. Vary your play-calling every series.
+    </Warning>
+
+    After the game, review the **Box Score + Grades** screen. GridIron GM assigns position-specific grades (A through F) based on individual matchup performance, not just raw stats. A defensive tackle who wins four pass-rush matchups but gets no sack still earns a high grade.
+  </Step>
+
+  <Step title="Handle Your First Free Agency Offer">
+    Within the first two in-game days after your Week 1 preseason game, you'll receive a **Notification** that a free agent or rival team has expressed interest in one of your players — or that a player on your roster has triggered a **Contract Extension Request**.
+
+    Open the notification to enter the **Contract Negotiation Engine**. Two meters drive every conversation:
+
+    - **Interest Meter** — How much the player wants to be on your team. Rises when you highlight winning culture, scheme fit, and snap share projections. Falls when you bring up cap constraints or competition.
+    - **Patience Meter** — How long the player is willing to negotiate. Starts full; drains with each lowball offer, delayed response, or hostile tone choice.
+
+    Walk through the dialogue tree. Select offer terms — **AAV, Guaranteed Percentage, Contract Length, and Incentive Structure** — and watch both meters respond. If Patience hits zero before a deal is signed, negotiations lock for 48 in-game hours and other teams can enter the conversation.
+
+    <Tip>
+      The **PiP (Picture-in-Picture) News Ticker** runs in the bottom-left corner during all menu navigation. It surfaces real-time league events: rival signings, injury reports, and player social media activity that hints at Persona shifts. Keep an eye on it — a cryptic post from one of your unsigned free agents is an early warning of a Stage 2 holdout escalation. Tap the ticker to expand the full news feed without leaving your current screen.
+    </Tip>
+
+    Complete the negotiation — accept, counter, or table the offer — and you've officially experienced the full GridIron GM loop: roster management, scheme-building, on-field play, and player relations.
+  </Step>
+
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## Auto-Manage Options
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+If you want to focus on specific areas of the game and delegate the rest, open **Settings → Auto-Manage** at any time:
+
+<CardGroup cols={2}>
+  <Card title="Auto Contract Extensions" icon="file-signature">
+    The CPU handles all extension negotiations using your defined priorities (Win Now, Rebuild, Cap Flexibility). Review and override any deal before it signs.
+  </Card>
+  <Card title="Auto Depth Chart" icon="list-ol">
+    Automatically sorts depth charts by OVR after each roster move. Scheme Fit adjustments are applied but you can still manually override individual positions.
+  </Card>
+  <Card title="Auto Practice" icon="whistle">
+    Simulates weekly practice sessions and applies XP gains without requiring you to run drills. Player development still tracks normally.
+  </Card>
+  <Card title="Auto Special Teams" icon="kicking-leg">
+    Assigns the highest-rated eligible players to every special teams unit each week. Useful if you prefer to focus on offense and defense only.
+  </Card>
+</CardGroup>
+
+<Note>
+  Auto-manage options can be toggled on or off mid-season at any time. Enabling **Auto Contract Extensions** will not retroactively renegotiate deals already in progress — only future triggered negotiations are affected.
+</Note>
+
+## What to Explore Next
+
+<CardGroup cols={3}>
+  <Card title="Persona DNA Matrix" icon="dna" href="/franchise/persona-engine">
+    Learn how 65+ traits determine player behavior and how in-season events shift persona weights.
+  </Card>
+  <Card title="Free Agency & Bidding" icon="gavel" href="/franchise/free-agency">
+    Master the 12-hour bidding clock, Franchise Tag strategy, and UDFA signing windows.
+  </Card>
+  <Card title="Holdout System" icon="megaphone" href="/franchise/holdouts-trades">
+    Understand the four-stage holdout escalation and how to defuse situations before they reach a formal trade request.
+  </Card>
+</CardGroup>

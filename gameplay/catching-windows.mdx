@@ -1,0 +1,97 @@
+---
+title: "Timing Catch Windows: Replace Auto-Catch Mechanics"
+sidebarTitle: "Catching Windows"
+description: "Learn how timed catch windows replace auto-catch. Understand throw velocity, coverage leverage, and how to read the ball arc for perfect timing every time."
+---
+
+GridIron GM replaces the passive auto-catch system with an active, skill-based **Catching Window** mechanic. Every thrown ball opens a timed trigger window — you press the catch input at the right moment to secure the reception. Miss that window and the ball hits the ground, rattles loose under contact, or slips through your receiver's hands entirely. Nail it and your receiver snaps from catch stance directly into ball-carrier mode, setting up your yards after catch before a defender can close. This system rewards receivers who study throw trajectories and punishes lazy, passive catches — just as it does in real football.
+
+## How Window Size Is Calculated
+
+The size of your catch window is not fixed. It changes on every single route based on two live variables: **QB throw velocity** and **WR coverage leverage**.
+
+<CardGroup cols={2}>
+  <Card title="QB Throw Velocity" icon="football">
+    A harder, flatter throw compresses the window — the ball arrives faster, giving you less time to react. A touch pass or lofted throw stretches the window, giving you more frames to find the right input. High-velocity QBs reward precise receivers who have learned to read their timing; low-velocity QBs are more forgiving but easier for defensive backs to jump.
+  </Card>
+  <Card title="Coverage Leverage" icon="shield">
+    When your receiver is running free with no defender within a few yards, the catch window expands significantly. The more contested the coverage — especially in press man or bracket coverage — the tighter the window becomes. A receiver running an out route with a corner riding his hip has a fraction of the window size of one who has beaten his man clean down the seam.
+  </Card>
+</CardGroup>
+
+## Timing Results
+
+Your catch input produces one of three outcomes depending on when it lands relative to the window.
+
+| Timing Result | Input Timing | Outcome |
+|---|---|---|
+| **Perfect** | Input lands inside the center of the window | Instant ball-carrier transition — full YAC potential, no drop risk, maximum contested-catch strength |
+| **Early Trigger** | Input lands before the window opens | Drop risk increases — receiver reaches prematurely and can bobble or lose the ball on contact |
+| **Late Trigger** | Input lands after the window closes | Contested-catch penalty applied — ball is harder to secure under pressure, increased chance of incomplete or strip |
+
+<Note>
+  Receiver **catching** and **catch-in-traffic** ratings directly influence how forgiving early and late triggers are. An elite receiver with a 95 catching rating absorbs a slightly early or late input with only a small drop-risk increase. A low-rated receiver attempting a late-trigger catch in press coverage is almost certain to drop the ball or get the pass batted away. Always account for your receiver's ratings when deciding how aggressively to push contested routes.
+</Note>
+
+## Reading the Throw Arc
+
+The most reliable way to time your catch window is to watch the ball's trajectory, not the countdown or any on-screen indicator. The window follows a consistent rule tied to the ball's flight path.
+
+<Steps>
+  <Step title="Track the ball off the QB's hand">
+    The moment the QB releases, shift your focus from the receiver to the ball itself. Follow its arc upward — the rise phase of the trajectory is your preparation window. Don't input yet.
+  </Step>
+  <Step title="Identify the peak trajectory point">
+    Watch for the ball to reach its highest point in the arc. This is your alignment cue. The catch window **opens as the ball begins its descent from peak trajectory**. This is true on every throw type, including screen passes (where the arc is shallow and the window opens almost immediately).
+  </Step>
+  <Step title="Input at the descent threshold">
+    As the ball tips over from peak and begins dropping toward your receiver, press the catch input. On a well-thrown ball with open coverage, this timing produces a Perfect result. On a fast, flat throw, compress your timing — the arc is lower and shorter, so the descent threshold comes earlier in the overall flight.
+  </Step>
+  <Step title="Adjust for coverage contact">
+    If a defender is making contact with your receiver during the catch attempt, your window shrinks dynamically. In those situations, aim to be slightly early rather than late — an early catch attempt at least gives your receiver a chance to fight for the ball, while a late one under contact almost always results in a forced incompletion.
+  </Step>
+</Steps>
+
+<Tip>
+  Watch the throw arc on every pass, including incompletions and interceptions early in the game. Each QB on your roster has a slightly different release angle and flight arc shape. Recognizing your starter's arc signature means you can begin reading the window open before the ball even reaches midfield, giving you an extra fraction of a second to commit to the catch input at the right moment.
+</Tip>
+
+## Coverage Situations and Window Strategy
+
+Different coverage types change how you should approach the catch window. The table below maps common defensive looks to the right catching strategy.
+
+<Tabs>
+  <Tab title="Open Field / Blown Coverage">
+    When your receiver has beaten his man cleanly — no corner within three yards — the window is at its widest. You have room to be deliberate. Wait for the ball to begin its descent, then input cleanly. Perfect timing here is straightforward and sets up maximum YAC. Don't rush it.
+  </Tab>
+  <Tab title="Press Man Coverage">
+    The window is tight and the corner is directly on your receiver throughout the route. Aim for slightly early rather than perfectly centered — the window opens briefly and closes fast. A Perfect input wins the contested catch decisively; an Early input gives your receiver a fighting chance. A Late input in press coverage almost always results in a pass breakup.
+  </Tab>
+  <Tab title="Zone Coverage">
+    Zone defenders close on the ball rather than riding the receiver, which means the window is medium-sized but the contact threat arrives suddenly. Time your input to the arc descent as normal, but be prepared for a contested-catch penalty if the zone defender is already in the vicinity when the ball arrives.
+  </Tab>
+  <Tab title="Over-the-Shoulder (Go Routes / Posts)">
+    Deep ball catching windows behave slightly differently — the arc is longer and the descent phase is more gradual. The window opens earlier relative to the ball's position than on short throws. Practice reading the peak on deep routes specifically, as the added hang time can tempt you into inputting too late while the ball is still rising.
+  </Tab>
+</Tabs>
+
+## Tight Coverage Tips
+
+<CardGroup cols={2}>
+  <Card title="Use Motion to Create Leverage" icon="arrows-left-right">
+    Pre-snap motion that forces a defender to re-route directly expands your catch window on the post-snap catch attempt. A receiver who runs free off a rub or a pick motion has better coverage leverage and a larger window than one fighting press from the line.
+  </Card>
+  <Card title="Attack the Middle of the Field" icon="crosshairs">
+    Routes over the middle — slants, crosses, and digs — typically generate better coverage leverage than outside routes because zone defenders have less time to close. The resulting wider catch window makes timing these routes easier, especially against tight man coverage outside.
+  </Card>
+  <Card title="Prioritize High-Catch Receivers in Tight Windows" icon="star">
+    When you're forced to throw into press coverage or tight brackets, your receiver's catch-in-traffic rating matters more than his speed or route running. Set your depth chart so your best contested-catch receivers are the primary reads in high-leverage situations.
+  </Card>
+  <Card title="Exploit Mismatches with Speed Routes" icon="bolt">
+    A speed receiver running a fly route against a slower corner generates high leverage quickly because the defender falls behind the route. The window expands as the separation grows. Throw early enough to let the arc reach peak before your receiver has to look back.
+  </Card>
+</CardGroup>
+
+<Warning>
+  Never rely on a Late Trigger under defensive contact. If you've missed your window and a defender is already in position to make contact at the catch point, let the ball go incomplete rather than forcing an input. A contested late-trigger attempt risks a strip, a pick-six on the deflection, or a receiver injury from absorbing a hit while unprepared to secure the ball.
+</Warning>

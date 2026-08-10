@@ -1,0 +1,253 @@
+---
+title: "Troubleshooting Common GridIron GM Issues"
+sidebarTitle: "Troubleshooting"
+description: "Step-by-step fixes for the most common GridIron GM problems, from locked negotiations and stuck holdouts to weather fumbles and MUT milestone bugs."
+---
+
+GridIron GM's deep simulation systems are intentionally interconnected, which means that what looks like a bug is often a mechanical rule that hasn't been explained clearly. This page addresses the most commonly reported problems with precise cause-and-effect explanations and concrete steps to resolve each one. For general how-to questions that aren't blocking your game, check the [FAQ](/help/faq) first.
+
+<CardGroup cols={2}>
+  <Card title="Negotiations Locked" icon="lock" href="#negotiations-locked">
+    Patience meter at zero — what to do now
+  </Card>
+  <Card title="Holdout Not Resolving" icon="user-x" href="#holdout-not-resolving">
+    Player stuck at Stage 3 pre-season holdout
+  </Card>
+  <Card title="Smart Zone AI" icon="brain" href="#smart-zone-ai-feeling-psychic">
+    Defense feels like it's reading your mind
+  </Card>
+  <Card title="Fumble Rate Spike" icon="football" href="#fumble-rate-spiking-mid-game">
+    Unexpected ball security issues mid-game
+  </Card>
+  <Card title="SuperSim Scores" icon="chart-bar" href="#supersim-unrealistic-scores">
+    Simulation producing lopsided or unexpected results
+  </Card>
+  <Card title="MUT Milestone Stuck" icon="star" href="#mut-card-milestone-not-progressing">
+    Evolution card progress not advancing
+  </Card>
+  <Card title="Weather Mismatch" icon="cloud-rain" href="#weather-not-matching-forecast">
+    In-game weather doesn't match the real world
+  </Card>
+</CardGroup>
+
+---
+
+## Negotiations Locked
+
+**What happened:** The contract negotiation interface is grayed out and shows a timer instead of the offer screen. This occurs when the player's **Patience Meter** reached zero during a previous session. The Patience Meter drains each time you submit an offer that falls significantly below the player's Decision Value threshold — the internal score the Persona Engine calculates from their weighted priorities (AAV, Guaranteed%, market size, snap share, and your Championship Contender Index). Once the meter empties, the player's agent formally closes talks.
+
+**How long it lasts:** The lock runs for **48 in-game hours**. You can track the remaining time on the player's contract status card in Roster Management. Simulating forward in Franchise time or playing games will advance the clock. The negotiation interface re-enables automatically when the timer expires.
+
+<Steps>
+  <Step title="Confirm the lock timer">
+    Navigate to **Roster Management → Contract Status**. Select the locked player and check the "Negotiation Available" field. It will display the remaining in-game hours. If the field reads "Locked — Agent Unavailable," the 48-hour window has not yet elapsed.
+  </Step>
+  <Step title="Advance in-game time">
+    Play or simulate your next scheduled game(s) to move the franchise clock forward. Each game advances roughly 3–4 in-game days depending on your calendar settings. Alternatively, use the **Advance Week** option from the Franchise Hub if you are between games.
+  </Step>
+  <Step title="Re-enter negotiations with a revised offer">
+    Once the lock expires, re-open talks. Before submitting, review the player's **Contract Profile** in their Scouting Report — the top three weighted traits are visible on All-Pro difficulty and below, giving you a clear signal of what the offer structure needs to prioritize.
+  </Step>
+  <Step title="Use Pivot Structure instead of raising the number">
+    If your total offer budget hasn't changed, use the **Pivot Structure** action to shift composition rather than raw value. Moving money from base salary to fully guaranteed often satisfies a player whose Decision Value formula weights Guaranteed% heavily, without requiring you to increase the AAV.
+  </Step>
+  <Step title="Avoid future locks">
+    Use **Walk Away** any time you recognize your current offer ceiling won't satisfy the player. Walking away costs zero Patience and preserves all future negotiating options. Reserve **Pitch Team Vision** for early in the session when the Interest Meter boost has the most leverage.
+  </Step>
+</Steps>
+
+<Warning>
+  Submitting multiple lowball offers in a single session drains the Patience Meter faster than a single lowball. Do not "probe" a player's floor by sending progressively lower offers — each submission is evaluated independently against their Decision Value threshold.
+</Warning>
+
+For a full explanation of the Interest Meter, Patience Meter, and all three negotiation actions, see the [Contract Negotiation guide](/franchise/contract-negotiation).
+
+---
+
+## Holdout Not Resolving
+
+**What happened:** A player is stuck at **Stage 3 (Pre-Season Holdout)** and does not respond to standard meeting requests. At Stage 3, the player is missing practice, accumulating daily fines, losing on-field ratings due to missed reps, and causing **pre-snap miscommunications** (receivers running incorrect routes, linemen pulling the wrong direction) in games where they do participate. Stage 3 requires targeted actions — passive time passage will not resolve it.
+
+<Steps>
+  <Step title="Initiate a direct contract extension offer">
+    Go to **Roster Management → Player Card → Contract Actions** and select **Offer Extension**. This opens a negotiation session even while the holdout is active, bypassing the normal scheduling delay. A holdout at Stage 3 will not auto-resolve from meeting requests alone — you must move the contract discussion forward.
+  </Step>
+  <Step title="Check the player's persona trait before offering">
+    If the holdout started before Week 8 and your record is below .350, the player may have already shifted traits (e.g., from Ring Chaser to Bag Chaser). Pull up their Scouting Report to check the current trait state. Pitching team vision to a player who is now a Bag Chaser will have minimal effect — lead with the financial offer instead.
+  </Step>
+  <Step title="Use the Pitch Team Vision action first if your record is above .500">
+    If your team is above .500, open the negotiation session with **Pitch Team Vision** to spike the Interest Meter before presenting numbers. A high Interest Meter at Stage 3 reduces the likelihood the player escalates to Stage 4 during the negotiation window, even if talks take more than one session.
+  </Step>
+  <Step title="Accept a restructure if necessary">
+    If the player's Decision Value threshold exceeds your current cap space, explore a **restructure offer** that converts base salary to signing bonus to create immediate cap room. This avoids a Stage 4 formal trade request, which makes the situation public and invites AI front offices to submit inquiries.
+  </Step>
+  <Step title="If escalation to Stage 4 has already occurred, act within the response window">
+    Stage 4 is time-sensitive. Once a Formal Trade Request is filed, you have a limited in-game window (displayed in the Holdout Tracker) to either re-engage contract talks or begin exploring trade partners. Letting the window lapse without action permanently lowers that player's morale rating for the remainder of the season, even if you eventually resolve the contract.
+  </Step>
+</Steps>
+
+<Note>
+  Pre-snap miscommunications caused by an active Stage 3 holdout persist for 2–3 in-game weeks even after the holdout is resolved, as the roster recalibrates Team Awareness. Expect a short adjustment period before your offense returns to full communication efficiency.
+</Note>
+
+For background on all four holdout stages and their effects, see the [Holdout Management guide](/franchise/holdouts-trades).
+
+---
+
+## Smart Zone AI Feeling "Psychic"
+
+**What happened:** The defensive AI seems to anticipate your play calls, rotating coverages pre-snap, jumping routes at unusual rates, and consistently generating pressure from unexpected angles. This is the **Smart Zone AI repetition penalty** functioning as designed — the defense is not reading your inputs, it is responding to your play-calling history.
+
+**The formula:**
+> **AI Adaptability = Base Awareness × (Concept Calls × 0.15)**
+
+Each time you call the same offensive concept within a game (for example: Inside Zone, Mesh, Four Verts, RPO Peek), the AI's adaptability score for countering that concept increases by 15% of its Base Awareness rating. After three or four repetitions of the same concept, the AI actively disguises its coverage shells — for instance, aligning in a Cover 2 look pre-snap, then rotating post-snap to Cover 3 Buzz, a coverage specifically designed to take away the routes that Four Verts targets.
+
+<Steps>
+  <Step title="Open the Play Call History panel mid-game">
+    Press the **right bumper on the play-call screen** to open Play Call History. Any concept you've called three or more times in the current game will be flagged with a yellow repetition indicator. These are the exact schemes the AI is currently adapting against.
+  </Step>
+  <Step title="Rotate concepts, not just plays">
+    The repetition penalty tracks **concepts**, not individual play names. Running "HB Dive," "Power," and "Inside Zone" in sequence still registers as three Inside Zone-concept calls. Rotate to a conceptually different run (e.g., Outside Zone, Toss, Counter) to reset the AI's adaptability gain for that scheme category.
+  </Step>
+  <Step title="Use formation variations to break coverage disguise reads">
+    Run the same play from multiple formations before the AI has adapted to any single one. If you call Smash from Trips Right twice, shift to Smash from I-Form next. The base concept is the same, but the formation changes the pre-snap read the AI uses to choose its disguise — different formations trigger different coverage shell assignments.
+  </Step>
+  <Step title="Call a concept the AI has not seen yet this game">
+    Any concept with zero repetitions faces the AI's Base Awareness only, with no adaptability multiplier applied. Keep at least two or three "fresh" concepts in reserve per half specifically for critical third downs or red-zone situations where you need an edge.
+  </Step>
+  <Step title="Exploit coverage shell disguises with hot routes">
+    The AI's post-snap rotation (e.g., Cover 2 → Cover 3 Buzz) is predictable once you identify the pattern. When you recognize a disguise, use **hot routes at the line of scrimmage** to adjust your route tree to attack the post-snap shell rather than the pre-snap look.
+  </Step>
+</Steps>
+
+<Tip>
+  Build a game plan with a minimum of six distinct offensive concepts spread across run and pass. Three for standard downs, one for third-and-short, one for third-and-long, and one in reserve for red zone. This distribution prevents any single concept from reaching the three-repetition adaptability threshold in a typical game script.
+</Tip>
+
+For more on countering adaptive coverage, see the [Smart Zone AI guide](/gameplay/smart-zone-ai).
+
+---
+
+## Fumble Rate Spiking Mid-Game
+
+**What happened:** Ball security was fine in the first half but fumble frequency spiked noticeably in the second half or fourth quarter. In almost all cases, this is the **Weather Engine** escalating game conditions mid-game — specifically, the transition from Dry to Light Rain or from Light Rain to Mud/Slippery.
+
+**The weather escalation table:**
+
+| Condition | Fumble Probability Modifier | Traction Modifier |
+|---|---|---|
+| Dry | +0% | None |
+| Light Rain | +10% | None |
+| Mud / Slippery | +10% | -20% traction |
+| Snow | +5% | -10% traction |
+
+Conditions escalate based on the simulated game forecast, not the real-world weather (see [Weather Not Matching Forecast](#weather-not-matching-forecast) below). A game that begins in Light Rain can progress to Mud/Slippery conditions by the third or fourth quarter, stacking both the fumble probability bonus and the traction penalty.
+
+<Steps>
+  <Step title="Check the weather overlay for the current condition">
+    The weather condition icon appears in the top-right corner of the HUD. If it has shifted since kickoff, the escalation penalty is now active. You can also pause and select **Game Info → Weather Status** for a precise breakdown of the current modifier values.
+  </Step>
+  <Step title="Adjust your ball security setting">
+    In the **Gameplay Settings** menu (accessible from the pause menu mid-game), increase the **Ball Security** slider for your current ball-carrier position groups. This trades a small amount of speed and agility for lower fumble susceptibility. Increase it at least one notch when Light Rain transitions to Mud/Slippery.
+  </Step>
+  <Step title="Switch to run concepts that minimize lateral cuts">
+    The -20% traction penalty in Mud/Slippery conditions hits cut-based run plays (sweeps, outside zone, tosses) harder than downhill runs. Shift your run game toward **Power, Inside Zone, and Fullback Dive** concepts that rely on linear acceleration rather than cut angles.
+  </Step>
+  <Step title="Reduce pass depth and prioritize ball security after the catch">
+    Deep passes require longer ball exposure in wet conditions. In Light Rain or worse, shift your passing game toward shorter, quicker routes (slants, curls, drags) where the receiver can secure the ball faster and limit contested-catch situations that increase fumble risk after contact.
+  </Step>
+  <Step title="Check dome status before traveling">
+    If you need to plan ahead for road games, confirm whether the opponent's stadium is a dome. **All dome stadiums are completely immune** to weather effects — wind, rain, mud, and snow do not apply at indoor venues. Check the Schedule screen's Stadium Type column before committing to a weather-dependent game plan.
+  </Step>
+</Steps>
+
+<Warning>
+  If you are playing as a team in a warm-weather outdoor stadium in the postseason, weather conditions can be severe. Dome teams traveling to cold-weather outdoor venues for playoff games can face maximum weather penalties with no dome immunity. Build your roster's ball security ratings accordingly before the postseason begins.
+</Warning>
+
+---
+
+## SuperSim Producing Unrealistic Scores
+
+**What happened:** A simulated game produced a score or outcome that seems wildly inconsistent with your team's overall rating vs. the opponent. SuperSim does **not** use flat team overall ratings — it resolves matchups at the **individual positional level**, meaning roster depth gaps have a direct and outsized effect on simulated outcomes.
+
+<Steps>
+  <Step title="Open the Matchup Ratings panel before simming">
+    On the SuperSim setup screen, select **Matchup Ratings** to see every positional head-to-head for this game. Each matchup is color-coded: green (your advantage), gray (neutral), red (opponent advantage). Any matchup highlighted in red is a vulnerability the simulation engine will actively exploit in proportion to the rating gap.
+  </Step>
+  <Step title="Identify depth chart gaps specifically">
+    SuperSim evaluates your **starting lineup** as set in your current depth chart. If auto-depth chart is enabled and has placed a lower-rated player in a starting role due to roster sorting logic, that player's rating feeds directly into the matchup calculation. Check for unexpected starters — especially at line positions — before simming.
+  </Step>
+  <Step title="Manually adjust the depth chart before simming">
+    Navigate to **Roster Management → Depth Chart** and manually slot your intended starters. If your second-string safety has drifted above your intended starter due to an auto-sort, correct it here. The SuperSim engine re-reads the depth chart each time you re-enter the simulation setup screen.
+  </Step>
+  <Step title="Simulate individual matchups to isolate the problem">
+    If the final score seems wrong but you can't identify a specific gap, select **Positional Breakdown** in the SuperSim results screen after the sim completes. This report shows which matchups drove the most simulated production, letting you pinpoint which gap the engine exploited.
+  </Step>
+  <Step title="Play the game manually if the result has high-stakes implications">
+    For games that directly affect playoff seeding, wild card positioning, or key statistical milestones, choose to play manually rather than sim. SuperSim is accurate on average across many games, but individual game variance is wider than live gameplay because it runs probabilistic resolutions on each matchup rather than exact gameplay physics.
+  </Step>
+</Steps>
+
+<Tip>
+  Running backs and cornerbacks have the highest variance in SuperSim outcomes because they appear in the highest number of individual matchup calculations per game. Ensure these positions have genuine depth across your roster, not just elite starters, to stabilize your simulated results.
+</Tip>
+
+---
+
+## MUT Card Evolution Milestone Not Progressing
+
+**What happened:** You completed what you believe was a qualifying performance, but the Evolution milestone counter on your MUT card did not advance. This is almost always caused by one of three issues: the game mode is not qualifying, the stat was recorded in a non-counting category, or the milestone requires a threshold within a single game rather than cumulative.
+
+<Steps>
+  <Step title="Confirm the game mode qualifies for milestone tracking">
+    Evolution milestones only count in **qualifying game modes**: MUT Solo Challenges (marked with the Evolution badge), H2H Seasons, and the Salary-Cap H2H Weekend League. Standard Exhibition games, Practice Mode, and MUT Draft do **not** count toward Evolution milestones, even if the performance would otherwise meet the threshold numerically.
+  </Step>
+  <Step title="Check whether the milestone requires a single-game threshold">
+    Open the Evolution card and select **Milestone Details**. Many milestones are phrased as single-game achievements (e.g., "Record 2 sacks in a single game") rather than cumulative totals. A cumulative two-sack performance across five games does not fulfill a single-game threshold requirement. The requirement type (single game vs. cumulative) is displayed in the milestone description.
+  </Step>
+  <Step title="Verify the stat category matches exactly">
+    Milestones track specific stat categories that may not match how the game's box score labels them. Common mismatches:
+    - **"Tackles for Loss"** — Counts only TFLs recorded by the stat system, not all negative-yardage stops. An assisted tackle that held a runner for -1 yard may not register as a TFL if the primary tackler gets sole credit.
+    - **"Receiving Yards"** — Does not include yards after the catch on behind-the-line screens that are classified as rush plays in the engine.
+    - **"Completion percentage"** — Spikes and throwaway passes count as incompletions in the milestone tracker.
+  </Step>
+  <Step title="Check for the qualifying game badge in the post-game summary">
+    After any game in a qualifying mode, the post-game summary screen displays a green **Evolution Tracking Active** badge in the top-right corner. If this badge was absent, the game was not counted. You may have accidentally launched a non-qualifying game variant from the same menu.
+  </Step>
+  <Step title="Restart the app and check sync status">
+    If the badge was present and the milestone still didn't advance, close the application fully and relaunch. Milestone progress syncs to the server at the end of each qualifying game; if the connection dropped during the sync window, the progress is saved locally and will upload on the next successful connection. The milestone tracker will reflect the correct count after sync completes.
+  </Step>
+</Steps>
+
+<Note>
+  The Salary-Cap H2H Weekend League uses Evolution card ratings **at the tier active during the weekend league period**. If your card upgrades to the next tier mid-weekend, the new ratings apply immediately for the remainder of that weekend's games. Plan your milestone pushes accordingly.
+</Note>
+
+---
+
+## Weather Not Matching Real-World Forecast
+
+**What happened:** You're playing a game at an outdoor stadium and the in-game weather (sunny and clear) doesn't match the actual weather at that real-world location (raining and cold), or vice versa.
+
+**The explanation:** GridIron GM's Weather Engine is **entirely simulation-driven and does not use real-world weather data**. Conditions are generated from a procedural forecast system that assigns weather based on geographic region, stadium type, and the in-game calendar week. A game scheduled in Week 15 at an outdoor cold-weather stadium will draw from a probability table weighted toward cold and precipitation — but the specific conditions (rain vs. snow vs. clear) are determined at the time your franchise clock advances to game week, not by any external feed.
+
+<Steps>
+  <Step title="Check the pre-game weather forecast screen">
+    Before simming or playing any game, open the **Pre-Game Overview** screen. The Weather Panel in the bottom-left shows the starting condition and — critically — the **forecast arrow**, which indicates whether conditions are expected to remain stable, escalate (arrow pointing up), or clear (arrow pointing down) during the game.
+  </Step>
+  <Step title="Note the escalation risk before committing to a game plan">
+    If the forecast arrow points up from Light Rain, plan for the possibility of Mud/Slippery conditions by the second half. Build your game plan around **both** scenarios rather than assuming the starting condition persists. Have a ball-security-oriented run package ready to deploy if conditions escalate.
+  </Step>
+  <Step title="Verify whether the stadium is a dome">
+    If the pre-game weather panel shows weather effects but you believe the real-world stadium is a dome, check the **Stadium Profile** under League Info. If the game is correctly classified as a dome venue, weather should read "Controlled Environment — No Weather Effects." If it's showing weather for a dome stadium, report the stadium classification via the in-game feedback tool.
+  </Step>
+  <Step title="Understand that weather is set at the start of game week">
+    Weather is determined when the franchise clock advances to the current week, not when you launch the game. Saving and reloading before launching the game does not change the weather — the conditions are already seeded. To get different weather, you would need to revert to a save made before the week advanced, which is only possible if you saved manually prior to that transition.
+  </Step>
+</Steps>
+
+<Note>
+  The Weather Engine's regional probabilities are calibrated to approximate historical NFL weather patterns by location and week — outdoor cold-weather cities see higher snow and ice probability in Weeks 14–18, and southern outdoor venues see more rain in early-season games. The system is probabilistic, not deterministic, so any individual game can deviate from the regional average.
+</Note>

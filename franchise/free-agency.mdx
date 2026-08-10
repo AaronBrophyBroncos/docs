@@ -1,0 +1,94 @@
+---
+title: "Free Agency: Bidding Clock and Franchise Tags"
+sidebarTitle: "Free Agency"
+description: "Navigate the 12-hour bidding clock, outmaneuver AI front offices, use franchise tags strategically, and build your roster through UDFA signings and cutdowns."
+---
+
+Free agency in GridIron GM compresses the chaos of NFL opening day into a fully simulated bidding environment where every team in the league is working against the same clock you are. Knowing which players to target before the clock starts, when to bid aggressively and when to let a price inflate past your cap ceiling, and how to use roster tags to protect your own assets will determine whether your offseason builds a Super Bowl roster or leaves you scrambling at the trade deadline.
+
+## The 12-Hour Bidding Clock
+
+When the legal tampering window closes and free agency officially opens, a **12-Hour Bidding Clock** begins. This clock runs in one of two modes depending on your settings:
+
+<Tabs>
+  <Tab title="Accelerated Real-Time">
+    The 12-hour clock ticks in real time but compresses to a 30-minute session. Every AI team is simultaneously evaluating its cap space, positional needs, and roster archetype priorities and submitting bids without waiting for you. This mode creates genuine urgency — if you spend five minutes deciding whether to pursue a left tackle, two other teams may have already moved past your max offer. Check the **Priority Board** before the clock starts and have your top-five targets ranked with pre-set bid caps.
+  </Tab>
+  <Tab title="Tick-Based Steps">
+    The 12-hour window is divided into discrete ticks — each tick represents one hour of free agency time. You review all activity from the previous tick, submit your bids and actions, and then advance to the next tick. This mode gives you full control and visibility into the bidding landscape without real-time pressure. Recommended for your first few franchise saves or when managing a complex cap situation with multiple high-priority targets.
+  </Tab>
+</Tabs>
+
+### How AI Teams Bid
+
+Every AI front office evaluates free agents against two primary variables: **available cap space** and **team archetype needs**. A rebuilding team with significant cap room will bid aggressively on young, high-upside players at positions of need. A contending team near the cap ceiling will focus narrowly on one or two positions that represent genuine gaps in their Super Bowl window. Understanding AI behavior lets you identify bidding wars worth winning and ones worth ceding.
+
+<Tip>
+  Keep the **Picture-in-Picture (PiP) News Ticker** active during free agency. It streams breaking headlines — AI team signings, injury reports on players you are targeting, and trade chatter — directly across the bottom of any screen without forcing you out of the bidding interface. You can spot a competing team losing cap space to a surprise signing and immediately redirect your budget to a player who just became more available, all without leaving your Priority Board.
+</Tip>
+
+## Franchise Tags and Transition Tags
+
+Before free agency opens, you have the opportunity to apply roster-protection tags to your own players who would otherwise become unrestricted free agents. Tags lock a player to your franchise for one additional season at a designated salary, giving you time to negotiate a long-term extension without losing the player to the open market.
+
+### Tag Comparison
+
+| Tag Type | Salary Basis | Matching Rights | Extension Deadline | Best Used When |
+|---|---|---|---|---|
+| **Exclusive Franchise Tag** | Highest of: top-5 average at position, or 120% of prior salary | No matching rights — player cannot negotiate with other teams | July 15 (in-game) | You are confident you will sign an extension and want no outside interference |
+| **Non-Exclusive Franchise Tag** | Average of top-5 salaries at position over past 5 years | You can match any outside offer within 7 in-game days | July 15 (in-game) | You want to keep the player but are open to receiving two first-round comp picks if a deal falls through |
+| **Transition Tag** | Average of top-10 salaries at position | You can match any outside offer within 7 in-game days | Same as FA open day | You are less certain about long-term fit — lower salary, matching rights, but no comp pick protection |
+
+<Note>
+  You may apply **one franchise tag and one transition tag** per offseason, but not two franchise tags. Plan your tag usage in the final weeks of the regular season — the tag application window opens immediately after the championship game and closes before the legal tampering period begins.
+</Note>
+
+### Responding to Outside Offers on a Non-Exclusive Tag
+
+If another team submits a contract offer to your non-exclusive franchise-tagged player, you receive a 7-day in-game notification window. Navigate to **Front Office → Tag Management → Pending Offers** to review the offer terms. You can:
+
+- **Match the offer**: Player stays at the other team's contract terms. Your cap takes the hit.
+- **Decline to match**: Player signs with the other team. You receive two first-round draft picks as compensation.
+- **Negotiate a new extension**: If the player's agent signals willingness, you can enter the dialogue engine and attempt to close a long-term deal before the matching deadline expires.
+
+## UDFA Signing Period
+
+After each draft concludes, a **Post-Draft UDFA Signing Period** opens for all undrafted rookie free agents. Every team in the league scrambles to sign the highest-rated undrafted prospects before they are gone — and unlike the main draft, there is no pick order. Speed and preparation matter.
+
+<Steps>
+  <Step title="Review Your Needs Before the Draft Ends">
+    In the final rounds of the draft, open the **UDFA Watch List** in your front office screen. Flag players you want to target the moment the draft concludes. The game highlights players whose profiles match your scheme fit indicators and positional depth gaps.
+  </Step>
+  <Step title="Submit Offers Immediately at the Buzzer">
+    UDFA signing opens the instant the last pick is announced. Submit offers to your top targets before advancing any ticks or real-time minutes. AI teams are doing the same — high-rated UDFAs who slipped due to injury concerns or character flags can be gone within the first tick.
+  </Step>
+  <Step title="Use Signing Bonus to Win Bidding Wars">
+    UDFA contracts are capped in total value, but you can differentiate your offer with a higher signing bonus. For players with the **Security Seeker** sub-trait, a larger upfront guarantee will move their decision more than incremental AAV differences.
+  </Step>
+  <Step title="Manage Your 90-Man Roster Limit">
+    After the draft and UDFA period, your roster may be at or approaching 90 players. You cannot sign UDFAs that push you above the 90-man ceiling — plan your draft day releases in advance if you intend to sign multiple undrafted prospects.
+  </Step>
+</Steps>
+
+## The 90-Man Roster Cutdown Phase
+
+Between the end of free agency and the start of the regular season, the NFL's roster limits force a structured reduction from 90 players down to the 53-man active roster. In GridIron GM, this phase is simulated through a series of mandatory cutdown deadlines.
+
+<CardGroup cols={2}>
+  <Card title="First Cutdown: 90 → 85" icon="scissors">
+    Occurs at the end of the first preseason week. Release five players — typically bubble veterans and developmental prospects who are clearly behind on the depth chart. Use the scheme fit indicator to identify players whose traits do not align with your system before this deadline.
+  </Card>
+  <Card title="Second Cutdown: 85 → 80" icon="scissors">
+    Occurs after the second preseason game. Deeper evaluation of your position battles. Players who performed well in preseason action may leapfrog veterans with better ratings but poorer fit scores.
+  </Card>
+  <Card title="Third Cutdown: 80 → 53" icon="scissors">
+    The final cutdown to the active 53-man roster occurs 24 in-game hours before Week 1. This is the most consequential cut. Every released player immediately hits the waiver wire — any team can claim them for their active roster. High-rated releases will not make it to the practice squad.
+  </Card>
+  <Card title="Practice Squad: Up to 16 Players" icon="clipboard">
+    Immediately after the 53-man cutdown, you can sign up to 16 players to your practice squad. These players can be elevated to the active roster on game week. Priority goes to young developmental players and specialists you want to develop without burning a roster spot.
+  </Card>
+</CardGroup>
+
+<Warning>
+  Players you release in the final 90-to-53 cutdown are subject to waivers. If another team claims a player you intended to re-sign to the practice squad, he is gone. Identify your practice squad targets before the cutdown deadline and be realistic about which players other teams will want — do not assume a 74-rated developmental cornerback will go unclaimed if three other franchises are desperate at that position.
+</Warning>

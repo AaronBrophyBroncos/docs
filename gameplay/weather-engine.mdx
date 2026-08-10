@@ -1,0 +1,122 @@
+---
+title: "Dynamic Weather Engine: Real-Time Field Conditions"
+sidebarTitle: "Weather Engine"
+description: "Understand how real-time weather progression affects fumble rates, traction, and accuracy — and how to adjust your game plan before conditions turn against you."
+---
+
+GridIron GM's weather engine doesn't set a condition at kickoff and leave it there. Weather evolves across all four quarters — a game that starts under a light drizzle can deteriorate into a driving rainstorm by the third quarter, completely changing which plays work and which ones put the ball at risk. Rain accumulates on the field, wind shifts affect kick trajectories and deep routes, and snow slows down everything from route breaks to ball visibility. Understanding the progression, knowing which stadium locations are prone to which conditions, and building a game plan that accounts for the forecast is as important as your depth chart decisions.
+
+## Weather Conditions Physics Chain
+
+Conditions move through a defined progression chain based on real-time weather intensity. Each stage in the chain applies cumulative penalties to fumble rate, traction, and accuracy. A game that reaches mud-level saturation carries all prior chain penalties alongside its own.
+
+| Condition | Fumble Rate | Cut Traction | QB Accuracy | Notes |
+|---|---|---|---|---|
+| **Clear / Dry Turf** | Baseline | Baseline | Baseline | No penalties applied — full performance across all metrics |
+| **Light Rain / Mist** | +10% | No change | Slight penalty | Early-game rain; manageable with ball-security awareness |
+| **Steady Rain** | +18% | -10% | Moderate penalty | Routes slow, cuts lose crispness; running game starts to suffer |
+| **Heavy Rain / Downpour** | +25% | -20% | Significant penalty | Ball control becomes critical; short passing game is safest |
+| **Mud / Saturated Surface** | +25% | -20% | QB accuracy penalty | Combined effect of sustained rain; field degradation compounds traction loss |
+| **Snow (Light)** | +12% | -10% | Minor penalty | Ball visibility begins to reduce; route breaks are slightly slower |
+| **Snow (Heavy)** | +20% | -18% | Moderate penalty | Significant visibility reduction; deep routes are unreliable |
+| **High Wind** | No direct change | No change | Deep pass penalty | Kick trajectories curve noticeably; passes over 20 yards are unpredictable |
+
+## Weather Types In Detail
+
+<Tabs>
+  <Tab title="Rain">
+    Rain is the most common adverse weather type and the one most likely to escalate during a game. It starts as a light mist with minimal impact, but sustained rain accumulates on the field surface, eventually producing mud-level conditions with compounding traction and accuracy penalties.
+
+    **Key effects:**
+    - Fumble risk increases at every stage — wet balls are harder to grip
+    - Cut traction begins to drop in steady rain, making receiver route breaks less crisp and running backs' cuts less sharp
+    - QB accuracy penalties increase with rain intensity — expect sail errors on medium and deep throws
+    - Running backs with high carry ratings become relatively more valuable as passing reliability drops
+
+    **Escalation timeline:** Expect light rain to progress to steady rain by the second quarter if pre-game conditions show an active weather system. Heavy rain is most common in the third quarter, when accumulated moisture peaks.
+  </Tab>
+  <Tab title="Wind">
+    Wind does not affect fumble rates or traction but it fundamentally changes the kicking and passing games. Wind speed and direction are displayed in the pre-game screen and on the stadium overlay during field goal attempts.
+
+    **Key effects:**
+    - Kicks curve in the direction of the prevailing wind — a 20 mph crosswind can push a 45-yard field goal attempt wide by several yards
+    - Deep passes over 20 yards become inaccurate in high-wind conditions — the ball drifts, making timing routes unreliable
+    - Punting direction matters in wind: kicking with the wind extends hang time and distance; kicking into the wind kills distance and can produce returnable kicks
+    - Screen passes, quick slants, and run-heavy schemes become proportionally more effective when the deep passing game is compromised by wind
+  </Tab>
+  <Tab title="Snow">
+    Snow introduces a unique challenge that neither rain nor wind replicates: **ball visibility reduction**. In heavy snow, the ball blends with field conditions, making it harder to track throws and read coverages visually. Combined with slower route breaks, snow fundamentally favors the running game and short, quick passes.
+
+    **Key effects:**
+    - Receiver route breaks slow noticeably — cuts that are sharp in clear conditions become rounded and delayed
+    - Ball visibility decreases progressively with snow intensity — deep throws become particularly difficult to track for the catch timing window
+    - Defenders are also slowed, which partially offsets the route-break penalty for offenses
+    - Special teams are significantly affected — field goals in heavy snow carry wide miss risk even from reasonable range
+  </Tab>
+  <Tab title="Clear / Dry">
+    Clear, dry conditions represent baseline performance for every stat in the game. No penalties apply to fumble rate, traction, or accuracy. Wind effects are absent or negligible.
+
+    Use clear-weather games to establish play diversity, experiment with deep passing, and develop your concepts for later in the season when conditions will be worse. A Week 1 clear-weather game against a quality opponent is the best environment to stress-test your full playbook.
+  </Tab>
+</Tabs>
+
+## Dome Stadiums
+
+Dome stadiums are completely immune to weather effects. No rain, wind, snow, or mud penalties apply in any dome venue, regardless of what the real-world weather simulation calculates for that game week and location.
+
+<CardGroup cols={2}>
+  <Card title="Dome Advantage for Visitors" icon="building">
+    When you travel to a dome stadium in bad-weather weeks (late November, December, January), you receive the same weather immunity as the home team. Dome games in January play identically to a Week 3 clear-weather game — plan your playbook accordingly and bring your full passing game without weather adjustments.
+  </Card>
+  <Card title="Scheduling Awareness" icon="calendar">
+    If you're building a playoff roster, note which of your late-season home games are in dome stadiums. Home dome games eliminate weather as a factor in opponent preparation — visiting teams cannot use weather-adjusted running schemes to neutralize your passing offense. Open-air cold-weather stadiums work in the opposite direction: they neutralize visiting teams who haven't practiced in adverse conditions.
+  </Card>
+</CardGroup>
+
+## Weather Probability by Stadium Location and Season Week
+
+Weather outcomes are not random — they are seeded by a combination of your stadium's geographic location and the current week of the NFL season. This means you can reliably predict the probability of adverse conditions before each game.
+
+<Accordion title="Warm-weather and dome markets (Weeks 1–18)">
+  Miami, Tampa, New Orleans (dome), Las Vegas (dome), Los Angeles, and Phoenix stadiums have very low adverse weather probability throughout the entire regular season. Expect clear or light-wind conditions in the overwhelming majority of games at these venues. Blizzards, heavy snow, and sustained rain events will not occur in warm-weather open-air markets regardless of season week.
+</Accordion>
+
+<Accordion title="Northeastern and Midwest markets (Weeks 1–8)">
+  During the first half of the season, markets like Buffalo, New England, Chicago, Green Bay, and Cleveland have moderate weather probability. Rain and wind are possible from Week 3 onward, but sustained heavy rain and snow are unlikely before Week 9.
+</Accordion>
+
+<Accordion title="Northeastern and Midwest markets (Weeks 9–18 and playoffs)">
+  Late-season games at cold-weather open-air stadiums carry high probability of adverse conditions. Buffalo games in December have meaningful blizzard probability. Green Bay and Chicago games in Weeks 14–18 regularly produce snow or heavy wind. Plan your roster depth accordingly — teams with strong running backs, ball-security specialists, and accurate short-range QBs are built for this environment.
+</Accordion>
+
+<Accordion title="Mountain and variable markets (All weeks)">
+  Denver and Kansas City have variable weather profiles — early-season games are typically clear, but late-season games at these stadiums frequently produce wind and cold-weather effects. Denver's elevation also applies a mild kick-distance modifier even in clear conditions.
+</Accordion>
+
+## Bad-Weather Game Plan Strategy
+
+<Steps>
+  <Step title="Check the weather forecast before game day">
+    The pre-game screen displays a weather forecast for every game — temperature, precipitation type, wind speed, and direction. Read this screen before finalizing your game plan. If the forecast shows steady rain or heavy wind, adjust your script of opening plays away from deep routes and toward short-to-intermediate concepts.
+  </Step>
+  <Step title="Prioritize ball security in the depth chart">
+    Before kickoff in rain or snow conditions, check your running back depth chart and move your highest-carry-rating back into the starter role regardless of other attributes. Fumble rate penalties compound quickly in heavy rain — one fumble flipping field position in bad weather can decide the game.
+  </Step>
+  <Step title="Shorten your passing game">
+    Trim your play script of anything that requires a throw over 25 yards in rain or wind conditions. Slants, crosses, screens, and quick outs all avoid the trajectory uncertainty of deep throws while keeping your offense efficient. Long-developing routes also put your QB under extended pressure on a slippery field.
+  </Step>
+  <Step title="Lean on the running game as weather worsens">
+    Watch the weather progression during the game. When you see the condition upgrade from Light Rain to Steady Rain, shift your play-call ratio toward run-heavy concepts. The traction penalties hurt both offenses equally, but a ground game does not depend on throw accuracy or ball flight trajectory.
+  </Step>
+  <Step title="Attack the opponent's weather vulnerabilities on defense">
+    In adverse weather, blitz more aggressively. QBs accuracy is already penalized by conditions — adding pressure forces faster decisions on top of already-compromised mechanics. A four-man rush in clear conditions becomes equivalent to a five-man pressure in heavy rain. Save your most aggressive blitz packages for weather games.
+  </Step>
+</Steps>
+
+<Tip>
+  Check the weather forecast on the pre-game screen before every road game in Weeks 10 and beyond. The forecast not only shows current conditions — it shows the projected escalation for all four quarters. A game that opens with light mist but shows a heavy rain forecast for the third quarter should change how you script your drive structure: build a lead early with your full playbook, then protect it in the second half with conservative, ball-secure concepts.
+</Tip>
+
+<Warning>
+  Never call a deep passing play during a high-wind game without checking wind direction first. Throwing into a strong headwind on a 40-yard throw can produce significant trajectory drift, turning a well-read coverage into an easily-intercepted underthrow. If the wind is against you, cap your throwing depth at 20 yards until conditions change or you're throwing with the wind at your back.
+</Warning>

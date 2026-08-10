@@ -1,0 +1,122 @@
+---
+title: "Broadcast Presentation and Stadium Atmosphere"
+sidebarTitle: "Presentation"
+description: "Experience dynamic halftime shows, storyline-aware commentary, career milestone overlays, and localized stadium traditions across every franchise game."
+---
+
+GridIron GM's broadcast presentation system is built around one principle: every game in your franchise should feel like it belongs to your franchise specifically. Announcers don't deliver generic color commentary — they reference the trade you just made, the streak your running back is on, and the division rivalry that's been building for three seasons. The crowd doesn't make a generic stadium noise — it performs the specific chants and traditions tied to that team's home. From the pre-game show to the final tick of the fourth quarter, every broadcast element draws from your actual franchise data.
+
+## Pre-Game Show
+
+Before kickoff, a full pre-game segment sets the stage with information pulled directly from your franchise state.
+
+<CardGroup cols={3}>
+  <Card title="Weather Forecast" icon="cloud-sun">
+    Real simulated weather conditions for the stadium's geographic location are surfaced during the pre-game show, along with commentary on how wind speed and precipitation historically affect that team's passing attack.
+  </Card>
+  <Card title="Injury Report" icon="kit-medical">
+    The broadcast surfaces your current week's injury report in the pre-game segment, flagging starters listed as questionable or out and noting which backup is expected to step into the lineup.
+  </Card>
+  <Card title="Matchup Analysis" icon="magnifying-glass-chart">
+    The pre-game analysts break down two or three key positional matchups for the game — referencing the actual ratings involved and drawing on your recent game history to frame the narrative.
+  </Card>
+</CardGroup>
+
+---
+
+## Halftime Show
+
+The halftime show is generated dynamically from the actual first-half events of the simmed or played game. Nothing is pre-scripted.
+
+<Steps>
+  <Step title="Highlight Reel Generation">
+    The system identifies the top four to six plays from the first half — based on yards gained, score impact, and statistical significance — and compiles them into a highlight package. A 60-yard touchdown on third and long ranks higher than a short gain; a strip-sack that flipped field position ranks alongside scoring plays.
+  </Step>
+  <Step title="Analyst Breakdown Segment">
+    Over the highlights, the broadcast analysts provide context tied to your specific franchise storylines. If your starting QB is approaching a career passing yards record, the halftime crew surfaces that number. If a backup is starting due to an injury, they discuss the matchup implications heading into the second half.
+  </Step>
+  <Step title="Career Milestone Callouts">
+    If any player on either roster crossed a career milestone in the first half — 100th career touchdown, 10,000th career passing yard, first career sack — the halftime show dedicates a dedicated segment to that moment, pulling the in-game highlight and presenting it with the full career statistical context.
+  </Step>
+  <Step title="Second-Half Preview">
+    The show closes with a brief second-half preview: which adjustments the analysts expect based on first-half performance, which matchups to watch, and a score prediction that updates dynamically based on the margin and momentum of the first half.
+  </Step>
+</Steps>
+
+---
+
+## Dynamic Commentary
+
+The commentary system maintains a live data layer connected to your franchise history, tracking events across games, seasons, and transactions. Announcers don't just call what's happening on the field — they know what happened last week, last year, and in the offseason.
+
+<Accordion title="Play-Level References">
+  On any given play, the commentary system can surface:
+  - The specific play type and its success rate in your franchise this season
+  - A player's personal streak (targets, carries, tackles-for-loss)
+  - A callback to a similar play from earlier in the season or in a prior matchup
+  - Immediate statistical context ("that's his eighth reception of the game, matching his career single-game high")
+</Accordion>
+
+<Accordion title="Trade and Transaction References">
+  When a player performs against a team they were recently traded from, signed away from, or drafted over, the broadcast acknowledges it. If you traded a wide receiver to a division rival and he catches a touchdown against you, the announcers make that connection explicitly — with the correct trade details pulled from your franchise history.
+</Accordion>
+
+<Accordion title="Franchise Storyline Tracking">
+  The commentary engine tracks multi-week storylines — a rookie's ascent to starter, a veteran's farewell season, a team's playoff drought entering its tenth year — and weaves them into broadcasts at contextually appropriate moments. These storylines are generated from your actual franchise data, not pre-written scripts.
+</Accordion>
+
+---
+
+## Career Milestone Overlays
+
+Mid-broadcast graphic overlays appear automatically when a player approaches or crosses a notable career or season threshold.
+
+<CardGroup cols={2}>
+  <Card title="Approaching Milestone Banner" icon="hourglass-half">
+    When a player is within one performance of a significant milestone — 9 sacks heading into a game with a sack opportunity — a persistent on-screen banner tracks their progress and updates in real time as the game develops.
+  </Card>
+  <Card title="Milestone Achievement Overlay" icon="flag-checkered">
+    The moment a milestone is crossed, the broadcast cuts to a dedicated full-screen overlay with the player's photo, the milestone achieved, a career timeline, and a brief stat comparison against historical performances at that threshold.
+  </Card>
+</CardGroup>
+
+---
+
+## Localized Stadium Traditions
+
+Every NFL franchise has a distinct stadium culture. GridIron GM models these traditions at the individual team level, so a game in a historically loud dome feels different from a cold outdoor divisional rivalry.
+
+<Tabs>
+  <Tab title="Crowd Chants">
+    Each stadium has a library of team-specific crowd chants that trigger based on game situation. Third-down defense at home produces different crowd noise and visual crowd behavior depending on the franchise. The broadcast captures these moments with camera cuts to the stands and commentary acknowledgment when crowd intensity peaks.
+  </Tab>
+  <Tab title="Entrance Sequences">
+    Home team entrance sequences are franchise-specific — tunnel locations, lighting packages, hype video styles, and crowd response animations vary by stadium. Playing a game in a franchise's historic home stadium triggers an enhanced entrance sequence that acknowledges the venue's legacy.
+  </Tab>
+  <Tab title="Celebration Styles">
+    End zone celebration animations and on-field team celebration sequences are keyed to franchise culture. A traditionally conservative franchise has a different celebration palette than a historically expressive one. Signature celebrations earned through Superstar Mode skill tree progression layer on top of the franchise baseline.
+  </Tab>
+</Tabs>
+
+---
+
+## Picture-in-Picture News Ticker
+
+The PiP News Ticker is available throughout all franchise menus — not just during games. It runs as a persistent overlay in the lower portion of the screen, surfacing real-time franchise updates so you always know what's happening across the league without navigating away from your current task.
+
+<CardGroup cols={2}>
+  <Card title="What the Ticker Covers" icon="newspaper">
+    League-wide injury updates, waiver wire activity, trade rumors from other franchises, weather alerts for upcoming games, and milestone tracking for players across the league — including your own roster.
+  </Card>
+  <Card title="Franchise-Prioritized Feed" icon="filter">
+    Your own team's news items appear at higher frequency and with highlighted formatting. Division rivals' updates appear with secondary priority. The ticker doesn't bury your own franchise activity in league-wide noise.
+  </Card>
+</CardGroup>
+
+<Note>
+  The PiP News Ticker draws from the same data layer as the dynamic commentary system. A trade that gets announced on the ticker during your menu navigation will be referenced by announcers in the next game you play or simulate — the two systems stay synchronized.
+</Note>
+
+<Tip>
+  You can customize which broadcast elements are active in **Settings → Presentation**. Toggle individual components on or off — disable the halftime show for faster simming during multi-week stretches, reduce milestone overlay frequency if you prefer a cleaner on-screen experience, or turn off the PiP ticker if you want distraction-free menu navigation. All settings persist per-franchise, so your simulation franchise and your played franchise can have different presentation configurations.
+</Tip>

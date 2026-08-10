@@ -1,0 +1,111 @@
+---
+title: "Roster Management: Depth Charts, Cuts & Cap"
+sidebarTitle: "Roster Management"
+description: "Move from 90 to 53 players, optimize your depth chart with scheme fit tools, manage the practice squad, and keep your cap clean through restructures and void years."
+---
+
+Building a roster in GridIron GM is a year-round operation. From the moment the championship game ends to the final injury designation before Week 1, you are making decisions that compound on each other — a cap restructure in February shapes what you can spend in free agency, which shapes what you need from the draft, which shapes how you handle the cutdown to 53. Understanding each phase of the roster lifecycle and the tools available in each one lets you build intentionally rather than reactively.
+
+## The Full Roster Lifecycle
+
+<Steps>
+  <Step title="Offseason Begins: 90-Man Roster Window Opens">
+    Immediately after the season ends, you have a clean slate at the 90-man ceiling. This window is when you assess dead cap obligations from voidable contracts, decide which veterans to release or restructure before free agency begins, and project your available cap space for the offseason. Run the **Cap Health Report** from the Front Office dashboard — it surfaces every dead cap charge, every upcoming void, and every player in the final year of his deal before you spend a dollar.
+  </Step>
+  <Step title="Free Agency and Draft: Roster Building to 90">
+    Use free agency signings, the franchise tag, UDFA signings after the draft, and any trades to fill your roster gaps. You cannot exceed 90 players at any point during this window. If you are aggressively signing free agents, you may need to release developmental players to stay under the ceiling. Track the depth chart's **scheme fit indicators** (see below) as you add players — signing a talent who does not fit your scheme archetype may create more problems than he solves.
+  </Step>
+  <Step title="Preseason Cutdown 1: 90 → 85">
+    After the first preseason game, release five players. Focus on clear non-contributors: practice squad candidates who are clearly behind established veterans, position groups with depth beyond what practice squad rules allow you to maintain, and any players whose cap charge on the active roster does not justify the investment. Use the **Depth Chart Comparison View** to see side-by-side ratings and scheme fit scores for every player at each position before making cuts.
+  </Step>
+  <Step title="Preseason Cutdown 2: 85 → 80">
+    After the second preseason game, release five more. At this point you have preseason performance data — snap grades, pressure rates, missed assignment counts — layered over your pre-camp projections. Some position battles will be effectively decided. Others will require a third preseason game to resolve. Do not cut a player who is genuinely competing for a roster spot purely to simplify this cutdown; the final cut to 53 is the last one that matters.
+  </Step>
+  <Step title="Final Cutdown: 80 → 53">
+    The most consequential roster decision of the year. Every released player immediately hits league-wide waivers. Do not cut high-rated players you intend to stash on the practice squad — other teams will claim them. Prioritize keeping specialists with few positional alternatives, players with remaining developmental upside tied to your scheme, and any player whose release would generate significant dead cap you had not already accounted for.
+  </Step>
+  <Step title="Practice Squad: Up to 16 Players">
+    Immediately following the 53-man cutdown, sign up to 16 players to the practice squad. Practice squad players can be elevated to the active roster for individual game weeks (they revert after the game unless you make the elevation permanent, which consumes an active roster spot). Target your practice squad intentionally: developmental players at positions where you lack backup depth, specialists with scheme-specific skills, and recently released veterans who cleared waivers due to age or injury history.
+  </Step>
+  <Step title="In-Season: Trade Deadline and Injury Management">
+    The trade deadline opens in Week 4 and closes at the end of Week 11. Mid-season trades are evaluated through the same dialogue engine as offseason trades but with urgency weighting applied — players are more aware of your playoff trajectory, and their Decision Value formulas reflect current standings. Manage injuries through the IR and Short-Term IR systems (see below) to preserve cap flexibility and maintain roster depth through the second half.
+  </Step>
+</Steps>
+
+<Tip>
+  The **scheme fit indicator** on the depth chart screen displays a color-coded match score for every player at every position. A green icon means the player's traits align well with your system's demands at that spot. Yellow means functional fit with reduced ceiling. Red means misalignment — the player's traits actively work against your scheme's requirements. Prioritize green and yellow players when making final cutdown decisions, all else being equal. A 79-rated player who fits your scheme will typically outperform an 82-rated player who does not.
+</Tip>
+
+## Depth Chart Management
+
+Access the full depth chart from **Roster → Depth Chart**. Each position shows a ranked list of players with their individual ratings, scheme fit scores, and current availability status. Drag-and-drop reordering is supported, but the game will flag any change that creates a significant scheme fit mismatch and ask you to confirm.
+
+### Position Scheme Fit Indicators
+
+Every team in GridIron GM operates under a **system archetype** you define when the franchise begins — a broad philosophical choice (e.g., West Coast Offense, Power Run, 4-3 Over Defense, Cover-2 Zone) that shapes the scheme fit calculations across all 22 starting positions. When you build your depth chart:
+
+- **Primary scheme fit** measures how well a player's trait profile matches the system archetype's core demands at his position
+- **Role fit** measures how well a player matches the specific role within that scheme (e.g., a slot receiver within a West Coast system has different demands than an outside boundary receiver in the same system)
+- **Sub-scheme adjustment** allows you to define secondary tendencies (heavy motion, RPO package, two-tight-end sets) that modify the fit calculations for players who excel in those packages
+
+## Cap Management Tools
+
+<CardGroup cols={3}>
+  <Card title="Contract Restructure" icon="rotate">
+    Convert base salary into signing bonus money, spreading the proration across remaining contract years. Restructures free up immediate cap space at the cost of increased dead cap if the player is released or traded in subsequent years. Use restructures to open cap space in a championship window — just be certain you intend to keep the player for the full remaining term.
+  </Card>
+  <Card title="Void Years" icon="calendar-xmark">
+    Dead-year clauses attached to contract extensions that allow you to manufacture cap space in the current year by accelerating future proration. When a player's void year triggers, the remaining prorated signing bonus accelerates onto the cap in one lump sum. Void years are a short-term tool — plan for the acceleration date in advance or it will crater your cap in the wrong year.
+  </Card>
+  <Card title="Dead Cap Tracking" icon="skull">
+    Dead cap represents money that counts against your salary cap for a player no longer on your roster. Every restructure, void year trigger, and mid-contract release creates dead cap. The **Cap Health Report** shows your current dead cap obligations by year, by player, and by contract type, so you can see exactly when the books clean up.
+  </Card>
+</CardGroup>
+
+### Managing Dead Cap After a Release
+
+When you release a player who has prorated signing bonus money remaining on his contract, that remaining proration accelerates immediately onto your cap as dead money. The game calculates this in real time — the **Release Impact Preview** on a player's contract page shows you exactly how much dead cap you will absorb before you confirm any release. If the dead cap charge is prohibitive, explore a restructure first, or wait until the following year when additional proration has already been absorbed.
+
+<Accordion title="When to Restructure vs. Release">
+  Restructure a player when you intend to keep him for at least two more years and need immediate cap space for a free agent addition. Restructuring a player you plan to release in 12 months moves the cap pain rather than removing it — you will absorb the prorated bonus and the newly created restructure proration simultaneously when you eventually release him, compounding the dead cap hit. Only restructure deals you genuinely believe in.
+</Accordion>
+
+<Accordion title="Pre-Designating Void Year Triggers">
+  When you structure a contract with void years through the offer builder, set a **cap acceleration notice** in your Front Office calendar to flag the void year trigger date two in-game months in advance. This gives you time to offset the acceleration with a restructure on another contract or a mid-year trade before the hit lands. Teams that hit the void year date unprepared often find themselves over the cap in training camp with limited time to respond.
+</Accordion>
+
+## Injury Designations
+
+Injuries are unavoidable. How you manage the roster around them — which players go on which list, how you handle the roster spot that frees up, and when you bring players back — determines whether injuries derail your season or become problems you absorb without losing ground.
+
+<Tabs>
+  <Tab title="Injured Reserve (IR)">
+    Placing a player on Injured Reserve removes him from the active 53-man roster, opening a spot for a replacement signing. Standard IR requires the player to miss a minimum of four games before he is eligible to return. You can designate **two IR players per season** for early return activation — these players can come back after the minimum four-game absence without counting against any special activation limits. All other IR players are eligible to return at any point after the four-game minimum, subject to normal active roster management.
+  </Tab>
+  <Tab title="Short-Term IR">
+    Short-Term IR is designed for players expected to miss fewer than four games — a week-to-week hamstring, a bone bruise, a mild concussion protocol. The player is removed from the active roster (freeing the spot) but is eligible to return after a minimum of three in-game days rather than four games. Short-Term IR carries a higher monitoring burden — the game will notify you when a player's medical clearance is pending and give you a 24-hour in-game window to activate him before he defaults back to standard availability. Missing that window costs you a practice rep cycle and delays his return by one additional day.
+  </Tab>
+</Tabs>
+
+### Managing the Replacement Signing
+
+Every IR placement opens a temporary roster spot. Fill it efficiently:
+
+- Promote from the **practice squad** first — practice squad elevations are free and keep your developmental pipeline intact
+- Sign a street free agent only if no practice squad player fits the position need — street free agent signings carry a one-game acclimation penalty (reduced snap efficiency in the first game) unless the player has the **Quick Study** sub-trait
+- Track the IR player's return timeline in the **Injury Management Dashboard** (Front Office → Medical Staff) and plan your roster move before he clears — being caught with a full 53-man roster when a key player is cleared for return forces a same-day cut under time pressure
+
+## Trade Deadline Management
+
+The in-season trade deadline is your last opportunity to reshape the roster in response to what the standings and injury report have revealed. Enter the deadline period with a clear assessment of your position:
+
+<CardGroup cols={2}>
+  <Card title="If You Are a Buyer" icon="arrow-trend-up">
+    Target players whose Decision Value formulas make them receptive to a contending team. Ring Chasers on rebuilding rosters are the most movable assets at the deadline — their `w5` (Championship Index) weight makes your team genuinely attractive even if you cannot match the contract value a rebuilding team might offer in an extension. Be willing to pay in draft capital; deadline rentals require real assets.
+  </Card>
+  <Card title="If You Are a Seller" icon="arrow-trend-down">
+    Identify veterans in the final year of their deal who are unlikely to re-sign in your current cap situation, and trade them now rather than losing them for compensatory picks after free agency. The **Trade Value Calculator** in the Front Office menu projects the draft pick return you can expect based on the player's age, rating, contract status, and the current market of interested teams.
+  </Card>
+</CardGroup>
+
+Use the **Trade Block Board** to signal availability without submitting formal offers. Players listed on the trade block attract inbound AI inquiries within one to three ticks — review all inbound proposals in **Front Office → Trade Inbox** before the deadline clock expires.

@@ -1,0 +1,100 @@
+---
+title: "Managing Holdouts and Trade Demands"
+sidebarTitle: "Holdouts & Trades"
+description: "Recognize the 4-stage holdout progression early, contain locker room morale decay, and de-escalate trade demands before fine accrual and team chemistry collapse."
+---
+
+Holdouts in GridIron GM do not appear out of nowhere. They build through four distinct stages, each one louder and more damaging than the last, and each one offering you a window to de-escalate before the situation becomes unmanageable. The players who hold out are almost always telling you something true — their contract is below market, their snap share is shrinking, or they feel disrespected by a depth chart decision. Ignoring the signals does not make them disappear. It makes them louder, more expensive, and contagious.
+
+## The Four-Stage Holdout Progression
+
+<Steps>
+  <Step title="Stage 1 — Locker Room Rumor">
+    A quiet signal that something is wrong. You will see a low-priority notification in the **Front Office Feed**: *"Sources close to [Player] suggest some contract frustration heading into the season."* The player's Mood Indicator on his persona profile shifts from green to yellow. No public statements, no media presence, no financial consequences — yet.
+
+    **What triggers it:** Contract value more than 18% below market for the player's archetype, snap share declining two weeks in a row, or a teammate at the same position receiving a higher-value extension without corresponding playing time change.
+
+    **How to de-escalate:** Open informal contract talks immediately. You do not need to submit a formal offer — navigate to **Player Profile → Relationship → Open Dialogue** to acknowledge the situation. This small gesture resets the escalation timer by 3 in-game weeks and often prevents Stage 2 entirely. Alternatively, increase the player's projected snap share on the depth chart if scheme fit supports it.
+  </Step>
+  <Step title="Stage 2 — Social Media Cryptic Post">
+    The player posts something vague but unmistakable on the in-game social feed — a string of pointed emojis, a retweet of a contract-value comparison graphic, or a one-line caption that every reporter immediately interprets correctly. The **Media Pressure Gauge** in your Front Office hub ticks upward. Other players in the locker room begin noticing.
+
+    **What it means mechanically:** The player's Locker Room Morale contribution flips from positive to neutral. If he was previously a **Locker Room Leader** or **Mentor** archetype contributor, his positive effect on nearby players is suspended. Team-wide morale begins a slow decay if the post goes unaddressed for more than one in-game week.
+
+    **How to de-escalate:** Submit a formal contract offer through the dialogue engine, even if it is not your best offer. The act of formally engaging resets the social media flag and pauses the morale decay timer. A **Pitch Team Vision** action in the negotiation window is especially effective here — players at Stage 2 respond strongly to feeling heard and valued before the money conversation begins.
+  </Step>
+  <Step title="Stage 3 — Pre-Season Holdout">
+    The player fails to report to training camp. He is physically absent. **Fine Accrual begins immediately** at the league-mandated daily rate, which scales with his contract value. Practice reps are redistributed to his backup, which affects depth chart development for the position group. Reporters write daily updates. Morale decay accelerates.
+
+    **What it means mechanically:** Dependent position players begin accumulating pre-snap miscommunication penalties (see the Morale Decay section below). The player himself loses conditioning — every week he is absent translates to a performance stat penalty in the first two weeks after he returns, proportional to the total absence length.
+
+    **How to de-escalate:** This is the most expensive stage to resolve because the fines are already accumulating, but it is still less damaging than a Formal Trade Request. Offer a substantive contract improvement — not a token gesture. A guaranteed percentage increase of at least 10 points or an AAV jump of at least $2M per year is typically the minimum threshold to interrupt the Stage 3 trigger condition. You can also meet his agent in a **Closed-Door Session** (available in the Front Office menu during active holdouts) to negotiate privately without the media event that accompanies formal dialogue engine sessions.
+  </Step>
+  <Step title="Stage 4 — Formal Trade Request">
+    The player's agent submits a formal written trade request through the league office. This is now a public document. Media coverage is wall-to-wall. Every other team in the league receives a notification that the player is available and your asking price may be inflated by desperation if you do not act quickly.
+
+    **What it means mechanically:** The player refuses to practice. Fine accrual continues. His Decision Value formula now weights `w3` (market size) and external options far above anything you can offer. Locker room morale drops to its lowest floor state, applying maximum miscommunication penalties to all dependent position players. Younger players on the roster experience a development regression event.
+
+    **How to de-escalate:** At Stage 4 you have two paths. The first is to trade him — accept that the relationship is over, move quickly to extract the best possible return before his market value softens further due to the public nature of the request, and protect your locker room by resolving the situation decisively. The second is an extreme contract overhaul: a top-of-market offer with fully guaranteed first two years that the player's formula cannot rationally reject. This path works only if the player has a **Franchise Pillar** sub-trait or if your Championship Contender Index is above 0.75.
+  </Step>
+</Steps>
+
+<Warning>
+  **Fine accrual at Stage 3 is not waivable.** Once a player enters Pre-Season Holdout, the daily fines are docked from his accrued contract value regardless of how quickly you resolve the situation. A star player holding out for three training camp weeks can accrue over $1.2M in fines at the high end of the salary scale — money that affects dead cap calculations if the player is later released or traded. Resolve Stage 1 and Stage 2 before they reach Stage 3. The cost of engagement is always lower than the cost of avoidance.
+</Warning>
+
+## Locker Room Morale Decay
+
+An unaddressed holdout does not damage only the relationship with the individual player. It radiates outward through the roster, degrading team communication and trust at a rate that scales with the holdout player's role and personality traits.
+
+### How Decay Works
+
+Your franchise maintains a **Team Awareness Score** — a composite metric that reflects how well your players communicate, execute assignments, and trust each other on the field. Unaddressed holdouts reduce this score on a weekly basis:
+
+| Holdout Stage | Weekly Awareness Score Decay | Scope |
+|---|---|---|
+| Stage 1 (Rumor) | −0.5 points | Individual player only |
+| Stage 2 (Social Post) | −1.5 points | Position group |
+| Stage 3 (Pre-Season Holdout) | −3.0 points | Team-wide |
+| Stage 4 (Trade Request) | −5.0 points | Team-wide + development regression |
+
+The Team Awareness Score affects several in-game systems: pre-snap penalty frequency, defensive assignment execution, and two-minute drill efficiency. A roster that starts the season with a depressed Awareness Score will commit more procedural penalties and miss more coverage assignments in the early weeks until the score recovers through consistent weekly practice reps and morale events.
+
+### Position Dependency Penalties
+
+Certain positions in GridIron GM have explicit dependency relationships — their performance is partially calculated against the snap-share and communication status of related positions. When a player at a key position is in holdout, these dependent positions suffer measurable performance penalties.
+
+<CardGroup cols={2}>
+  <Card title="WR Holdout → QB Route Accuracy" icon="football">
+    A wide receiver in holdout reduces the quarterback's **Route Accuracy Target Radius** — the cone within which the QB's throw timing algorithm expects the receiver to be at the moment of release. With the WR absent from practice, the QB and backup WR are running abbreviated versions of the same routes, causing timing errors that show up as inaccurate passes even when both players have high individual ratings.
+  </Card>
+  <Card title="OL Holdout → RB Yards Before Contact" icon="shield">
+    An offensive lineman in holdout degrades the run blocking assignment execution for the entire line, reducing the running back's **Yards Before Contact** calculation. Blocking assignments require repetitions to execute at full efficiency, and an absent blocker means the backup's assignment timing does not match what the rest of the line was trained to expect.
+  </Card>
+  <Card title="LB Holdout → Safety Coverage Windows" icon="eye">
+    A linebacker in holdout disrupts the zone coverage communication chain that allows safeties to read run-pass option pre-snap. The safety's **Coverage Window Recognition** score takes a temporary penalty as the defense practices without the linebacker's alignment cues.
+  </Card>
+  <Card title="TE Holdout → Blitz Recognition" icon="zap">
+    A tight end in holdout reduces the offensive line's **Blitz Pickup Efficiency** because protection assignments often route through the TE's blocking identification. Without the TE in practice, the backup's communication with guards and tackles drifts out of sync.
+  </Card>
+</CardGroup>
+
+## De-Escalation Playbook
+
+Use this reference alongside the stage-by-stage guidance above to choose the most efficient intervention for each situation.
+
+<Accordion title="Offer a Snap Share Guarantee">
+  If the holdout is driven primarily by `w4` (SnapShare) weight — common in Alpha Dog and Film Room Rat archetypes — a formal snap share guarantee written into the contract can resolve Stages 1 and 2 without requiring additional money. Navigate to **Contract Special Clauses** in the offer builder and add a **Starter Clause** that triggers a void or escalator if the player drops below a defined percentage of offensive snaps.
+</Accordion>
+
+<Accordion title="Use the Closed-Door Session">
+  Available from Stage 2 onward, the Closed-Door Session is a private meeting that does not generate a media event. It pauses fine accrual for 24 in-game hours and provides a small flat boost to the player's Patience Meter before formal negotiations resume. Use it whenever you need time to restructure your cap before making a legitimate offer — it signals good faith without committing you to specific numbers.
+</Accordion>
+
+<Accordion title="Trade Him Decisively">
+  At Stage 4, prolonged hesitation about trading makes the situation worse, not better. Every additional week at Stage 4 softens the player's trade market value (other GMs see his discontent as a risk) while simultaneously continuing to drain your locker room. Set your trade parameters in **Trade Block → Asking Price**, accept a realistic return rather than holding out for ideal compensation, and make the move. A resolved Stage 4 holdout — even through trade — recovers the Team Awareness Score by +8 points within two in-game weeks.
+</Accordion>
+
+<Accordion title="Activate a Locker Room Leader">
+  If you have a player with the **Locker Room Leader** or **Mentor** sub-trait, you can deploy him as a **Team Ambassador** during an active holdout (Front Office → Morale Management → Assign Ambassador). He works behind the scenes to slow the morale decay rate by 40% and reduces the likelihood of younger players experiencing development regression events during Stage 3 or 4.
+</Accordion>

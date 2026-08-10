@@ -1,0 +1,254 @@
+---
+title: "GridIron GM Frequently Asked Questions"
+sidebarTitle: "FAQ"
+description: "Find quick, detailed answers to the most common GridIron GM questions about Franchise Mode, gameplay mechanics, game modes, and general settings."
+---
+
+GridIron GM packs a lot of interconnected systems under one roof — from 65-trait personas that shift mid-season to precision tackle mechanics and evolving MUT cards — so it's normal to have questions as you find your footing. This page collects the most common ones and gives you straight, specific answers. If you run into an issue that isn't covered here (something blocking your game rather than just confusing you), head over to [Troubleshooting](/help/troubleshooting) for step-by-step fixes.
+
+<CardGroup cols={2}>
+  <Card title="Franchise Mode" icon="building" href="#franchise-mode">
+    Personas, contracts, holdouts, and free agency
+  </Card>
+  <Card title="Gameplay" icon="gamepad-2" href="#gameplay">
+    Tackles, catching windows, weather, and Smart Zone AI
+  </Card>
+  <Card title="Game Modes" icon="trophy" href="#game-modes">
+    Franchise vs. Superstar, MUT, and Evolution cards
+  </Card>
+  <Card title="General" icon="circle-help" href="#general">
+    Saves, difficulty, and auto-manage options
+  </Card>
+</CardGroup>
+
+---
+
+## Franchise Mode
+
+<AccordionGroup>
+
+  <Accordion title="How do player persona traits work, and can they change mid-season?">
+    Every player in GridIron GM is driven by a **Persona Engine** that tracks 65+ individual traits. Each trait influences how a player weighs a contract offer through the **Decision Value formula**, which factors in Average Annual Value (AAV), Guaranteed%, your market size, expected snap share, and your team's Championship Contender Index.
+
+    Crucially, traits are **not static**. The engine re-evaluates key traits at milestone checkpoints — most notably after Week 8 of the regular season. The most impactful shift to watch for: a player with the **Ring Chaser** trait will convert to **Bag Chaser** if your team's win percentage falls below .350 by that checkpoint. Once a player becomes a Bag Chaser, AAV and Guaranteed% receive significantly higher weights in their Decision Value calculation, making them dramatically more expensive to re-sign or extend.
+
+    <Tip>
+      Keep an eye on your win-loss record entering the back half of the season. If you're sitting at 3–5 or worse, prioritize locking up Ring Chaser players on extensions **before** Week 8 arrives — the price jump after a trait shift can be substantial.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Why is a player's contract negotiation locked, and how long does it last?">
+    Negotiations lock when the **Patience Meter** hits zero. Every time you submit an offer that a player considers a lowball — one that falls significantly short of their Decision Value threshold — the meter drains. Once it empties, the player's agent closes the door for **48 in-game hours**, during which you cannot re-enter talks or make counter-offers.
+
+    The lock is not permanent. When the 48-hour window expires, negotiations reopen automatically. You can monitor the timer on the player's contract status card in the Roster Management screen.
+
+    <Warning>
+      Sending multiple lowball offers in rapid succession will drain the Patience Meter faster than a single lowball. Space out your offers and use the **Pivot Structure** action to shift contract terms (for example, trading base salary for guaranteed money) rather than simply bumping the total value incrementally.
+    </Warning>
+
+    For a full walkthrough of the Interest and Patience Meter mechanics, see the [Contract Negotiation guide](/franchise/contract-negotiation).
+  </Accordion>
+
+  <Accordion title="What are the best actions to use during contract negotiations?">
+    Three special actions are available during any negotiation dialogue:
+
+    - **Pivot Structure** — Reshuffles the composition of the offer (salary vs. guaranteed vs. incentives vs. void years) without changing the total value. Use this when a player has high Guaranteed% weight in their Decision Value formula — shifting $5M from base salary to fully guaranteed money can move the needle more than adding $2M AAV.
+    - **Pitch Team Vision** — Delivers a speech that temporarily boosts the Interest Meter by leaning into your Championship Contender Index. Most effective when your team's win% is above .500 and your cap situation is healthy. Has a cooldown before you can use it again in the same negotiation session.
+    - **Walk Away** — Ends the current session without penalty to the Patience Meter, preserving future negotiating room. Use this when you realize your current offer cap won't satisfy the player's Decision Value — walking away is always better than submitting a lowball that drains Patience.
+
+    <Tip>
+      Lead with Pitch Team Vision on the first exchange to spike the Interest Meter, then structure your offer around the player's highest-weighted trait (visible in the Scouting Report under "Contract Profile"). This order consistently yields better outcomes than opening with raw numbers.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="A player is stuck in a holdout. What are the four stages, and how do I get them back?">
+    Holdouts progress through four escalating stages if left unaddressed:
+
+    1. **Locker Room Rumor** — Internal chatter only. No gameplay penalties yet, but the player's morale is declining. Address it immediately by initiating contract talks or scheduling a one-on-one meeting.
+    2. **Social Media Post** — The player's situation goes public. Team Awareness begins to drop slightly, affecting pre-snap communication ratings for nearby players.
+    3. **Pre-Season Holdout** — The player misses practice time and accumulates **daily fines** deducted from their in-game salary. On-field ratings also dip due to missed reps.
+    4. **Formal Trade Request** — The player demands a move. If you don't respond within a set window, the request becomes visible to other AI front offices, inviting trade inquiries that can destabilize your roster.
+
+    Unaddressed holdouts at Stage 3 and beyond also cause **pre-snap miscommunications** — receivers running the wrong route, linemen pulling in the wrong direction — which appear as late motion penalties or busted assignments.
+
+    For specific steps to resolve a player stuck at Stage 3, visit the [Troubleshooting guide](/help/troubleshooting#holdout-not-resolving).
+  </Accordion>
+
+  <Accordion title="How does the Free Agency bidding clock work?">
+    When free agency opens, each available player is on a **12-hour bidding clock** (in-game time). Any NFL front office — yours or an AI team — can submit an offer during this window. When the clock expires, the player evaluates all bids using their Decision Value formula and signs with the highest-scoring offer, weighted by their personal trait priorities.
+
+    The three **franchise tag types** interact with this system differently:
+
+    - **Exclusive Franchise Tag** — Prevents the player from negotiating with any other team. No bidding war possible.
+    - **Non-Exclusive Franchise Tag** — Other teams can submit offer sheets. You have the right to match within 7 in-game days.
+    - **Transition Tag** — Similar to Non-Exclusive but set at the average of the top 10 salaries at the position, typically lower than the franchise tag value.
+
+    After the main signing period, the **UDFA signing window** opens. Undrafted free agents don't enter the bidding clock system — they're available on a first-come, first-served basis, so check the waiver wire as soon as the window opens. All teams then proceed through **90-man → 53-man** roster cuts before the regular season.
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## Gameplay
+
+<AccordionGroup>
+
+  <Accordion title="How do the right-stick tackle flicks work?">
+    The tackle system uses **right-stick precision inputs** that determine the type of tackle attempt:
+
+    | Flick Direction | Tackle Type | Best Used When |
+    |---|---|---|
+    | **Up** | High tackle | Ball carrier is upright, running full speed |
+    | **Down** | Low wrap tackle | Ball carrier is near the goal line or lowering their shoulder |
+    | **Left or Right** | Wrap angle correction | Ball carrier is cutting or you're approaching from the side |
+
+    Timing matters as much as direction. Input the flick **just as your defender enters contact range** — too early and your defender over-commits, creating a spin-move opportunity for the ball carrier; too late and you downgrade to a glancing hit that triggers a tackle-break animation.
+
+    <Tip>
+      Against powerful running backs with a high Break Tackle rating, default to the **low wrap (flick down)** — it has the highest success rate when the ball carrier lowers their pad level compared to the high tackle, which can be shed more easily by stronger runners.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="What is the Catching Window, and what happens if I press too early or too late?">
+    The **Catching Window** replaces the legacy auto-catch system with a timed trigger that you activate manually as the ball arrives. The window has three zones:
+
+    - **Perfect** — Triggers the receiver's hands at the exact moment of arrival. Results in an instant ball-carrier transition with full after-catch speed — no slowdown, no juggle animation.
+    - **Early** — You press before the ball fully arrives. Triggers a drop risk animation; the receiver's hands close slightly ahead of the ball, and the drop rate scales with the receiver's Catch rating and the difficulty of the route.
+    - **Late** — You press after the optimal window. The receiver attempts the catch but receives a **contested catch penalty** — even against no defender — because the body position is compromised.
+
+    <Note>
+      The size of the Perfect window scales with the receiver's route running and hands ratings. An elite slot receiver will have a noticeably wider window than a blocking tight end running a seam route. Use Practice Mode to train your timing by position before taking it into a live game.
+    </Note>
+  </Accordion>
+
+  <Accordion title="How does weather affect gameplay, and which stadiums are immune?">
+    The Weather Engine progresses through escalating conditions that apply real mechanical penalties:
+
+    | Condition | Effect |
+    |---|---|
+    | **Dry** | No penalties — baseline gameplay |
+    | **Light Rain** | Fumble probability increases by +10% |
+    | **Mud / Slippery** | Player traction reduced by -20%; affects cut angles and acceleration |
+    | **Wind** | Kick power and accuracy penalized; trajectory curves toward wind direction |
+    | **Snow** | Visibility reduction affects deep-route recognition and AI defender reaction time |
+
+    Weather conditions **escalate mid-game** based on the simulated forecast — a game that starts in Light Rain can progress to Mud/Slippery by the fourth quarter. Check the weather overlay in the pre-game screen to anticipate mid-game shifts.
+
+    **All dome stadiums are completely immune** to weather penalties — wind, precipitation, and visibility effects do not apply at indoor venues.
+
+    <Tip>
+      In heavy rain or mud, shift your offensive game plan toward short routes and runs. Not only do weather effects increase fumble risk, but the traction penalty hurts receivers' ability to separate at the top of deep routes.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Why does the AI defense seem to know exactly what I'm running?">
+    This is the **Smart Zone AI repetition penalty** working as designed. The formula is:
+
+    > **AI Adaptability = Base Awareness × (Concept Calls × 0.15)**
+
+    Every time you call the same offensive concept (e.g., Inside Zone, Smash, Four Verts) within a game, the AI's defensive adaptability rating for that scheme increases by 15% of its Base Awareness. After three or four repetitions of the same concept, the AI will rotate into **coverage shell disguises** — for example, showing Cover 2 alignment pre-snap before rotating to Cover 3 Buzz post-snap — specifically to counter your tendency.
+
+    The defense is not reading your controller input; it's responding to your play-calling history logged during the drive.
+
+    See [Troubleshooting](/help/troubleshooting#smart-zone-ai-feeling-psychic) for specific counters to the repetition penalty.
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## Game Modes
+
+<AccordionGroup>
+
+  <Accordion title="What's the difference between Franchise Mode and Superstar Mode?">
+    **Franchise Mode** places you in the GM/head coach role. You control the entire organization: scouting, drafting, contract negotiations, free agency bidding, depth chart management, and in-game play-calling. Every player on your roster is governed by the Persona Engine and responds to your organizational decisions.
+
+    **Superstar Mode** narrows the focus to a single player's career. You progress through a **skill tree** that splits into two distinct persona paths:
+
+    - **Media Presence** — Prioritizes endorsements, press availability, and public profile. Unlocks unique dialogue options and influences how free agents perceive your team's culture.
+    - **Film Room Preparation** — Prioritizes on-field IQ, pre-snap reads, and route precision. Unlocks advanced technique upgrades and rating boosts tied to preparation habits.
+
+    The two paths are not mutually exclusive by design, but investing heavily in one affects how the game tracks your progression milestones and which narrative events trigger. You can carry a Superstar Mode player into a Franchise Mode save, but you manage their contracts and roster fit from the GM perspective rather than the player's.
+  </Accordion>
+
+  <Accordion title="What is MUT Evolution, and how is it different from standard MUT cards?">
+    Standard MUT cards have fixed ratings that don't change. **MUT Evolution cards** are permanent, upgradeable versions that advance through five tiers as you hit in-game milestones:
+
+    | Tier | Label |
+    |---|---|
+    | 1 | Bronze |
+    | 2 | Silver |
+    | 3 | Gold |
+    | 4 | Elite |
+    | 5 | Icon |
+
+    Each upgrade permanently improves the card's ratings and unlocks new trait assignments. Milestones are position-specific — for example, a quarterback Evolution card might require a certain number of touchdown passes with zero interceptions in a single game, while a defensive end card tracks sacks and pressures. Progress is tracked automatically; you don't need to manually activate tracking.
+
+    The **Salary-Cap H2H Weekend League** uses Evolution cards within a hard salary cap, meaning an Icon-tier card costs significantly more cap space than a Bronze-tier version of the same player. Building a balanced lineup across tiers is often more effective than stacking Icon cards at the expense of roster depth.
+
+    <Note>
+      Evolution milestones only count in qualifying game modes — see [Troubleshooting](/help/troubleshooting#mut-card-milestone-not-progressing) if your milestone counter isn't advancing.
+    </Note>
+  </Accordion>
+
+  <Accordion title="How does SuperSim work, and why are my simulated scores sometimes unexpected?">
+    SuperSim does not use flat team overall ratings to calculate simulated outcomes. Instead, it resolves games through **individual positional matchups** — your left tackle's pass-blocking rating vs. the opposing defensive end's pass-rush rating, your slot corner vs. their slot receiver, and so on across the depth chart.
+
+    This means roster **depth gaps are actively exploited by the simulation engine**. If your third receiver has a significantly lower rating than the opponent's starting corner, that matchup will produce unfavorable simulated results proportionally. A team with a high overall rating but glaring positional depth issues can lose a SuperSim game to a lower-rated opponent with balanced depth.
+
+    <Tip>
+      Before simming a game, review the Matchup Ratings panel in SuperSim setup. Any matchup highlighted in red is a vulnerability the engine will lean on. Either address the depth gap before simming or consider playing the game manually if the outcome matters for playoff seeding.
+    </Tip>
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## General
+
+<AccordionGroup>
+
+  <Accordion title="How does the save system work? Does GridIron GM auto-save?">
+    GridIron GM uses a combination of **automatic checkpoints** and **manual saves**. The game auto-saves at every major transition point: after each game, after completing a free agency action, after finalizing a draft pick, and after executing a trade. Auto-save slots are separate from your manual save slots and roll forward on a three-checkpoint rotation, meaning you always have the last three major decision points available to revert to.
+
+    Manual saves can be triggered at any time from the pause menu or the main Franchise Hub screen. You have up to 10 manual save slots per franchise file. Save before entering a critical contract negotiation or before your draft board is revealed if you want the flexibility to replay those moments.
+
+    <Warning>
+      Auto-save checkpoints do **not** capture mid-game states. If you exit to the main menu during a live game, the game reverts to the pre-game auto-save. Complete the game or reach halftime (which triggers a mid-game checkpoint) before exiting.
+    </Warning>
+  </Accordion>
+
+  <Accordion title="What difficulty levels are available, and what do they actually change?">
+    GridIron GM offers five difficulty levels that affect both the gameplay side and the front-office simulation:
+
+    | Level | Gameplay AI | CPU Contract Aggression | Persona Trait Visibility |
+    |---|---|---|---|
+    | **Rookie** | Simplified | Low | Full trait display |
+    | **Pro** | Standard | Moderate | Full trait display |
+    | **All-Pro** | Advanced | High | Partial (top 3 traits shown) |
+    | **All-Madden** | Aggressive | Very High | Hidden (Decision Value estimated) |
+    | **Simulation** | Authentic | Authentic | Hidden |
+
+    Simulation difficulty is designed for players who want the most realistic franchise experience — AI front offices negotiate aggressively based on real market dynamics, and player personas are opaque, requiring active scouting to uncover trait information.
+
+    You can change gameplay difficulty between games without penalty. Persona trait visibility settings are locked to the difficulty you selected when creating your franchise file.
+  </Accordion>
+
+  <Accordion title="Can I auto-manage parts of the franchise I don't want to handle manually?">
+    Yes. GridIron GM includes granular **auto-manage toggles** accessible from the Franchise Settings screen. Each system can be turned on or off independently:
+
+    - **Auto-Scout** — The AI scouting staff allocates weekly scouting points automatically based on your draft board priorities.
+    - **Auto-Sign** — The AI will attempt to re-sign your own free agents using a budget you set. It does not use special negotiation actions (Pivot Structure, Pitch Team Vision), so it may miss deals that a manual session would close.
+    - **Auto-Depth Chart** — Automatically slots players by overall rating. Disable this if you use scheme-specific alignments, as the auto system ignores positional fit in favor of raw rating.
+    - **Auto-Practice** — Distributes weekly practice reps to maintain ratings, with a bias toward starters.
+    - **Auto-SuperSim** — Simulates all games automatically. Combine with the SuperSim matchup panel to monitor risky games.
+
+    <Note>
+      Auto-Sign does not handle holdout situations. Even with Auto-Sign enabled, a player who escalates to Stage 2 or higher in the holdout system requires manual intervention to resolve.
+    </Note>
+  </Accordion>
+
+</AccordionGroup>
